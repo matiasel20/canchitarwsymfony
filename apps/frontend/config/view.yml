@@ -12,9 +12,9 @@ default:
     #language:     en
     #robots:       index, follow
 
-  stylesheets:    [main.css]
+  stylesheets:    [main.css, EstiloIndex.css, "ui-lightness/jquery-ui-1.8.16.custom.css"]
 
-  javascripts:    []
+  javascripts:    ["jquery.min.js", "jquery.ui.datepicker-es.js", "jquery-ui-1.8.16.custom.min.js", "mi_jquery.validate.js", "vanadium_es.js", "funciones.js"]
 
   has_layout:     true
   layout:         layout
