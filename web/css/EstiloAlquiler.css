@@ -1,0 +1,49 @@
+table.alq{
+	margin-left:10%;
+	margin-bottom:5%;
+	width:400px;
+	height:200px;
+	border:solid white 2px;
+	color:white;
+	text-decoration:none;
+}
+
+
+td.alq{
+	border:none;
+	text-align:center;
+	text-decoration:none;
+}
+td.alqtitulo{
+	border:none;
+	width:200px;
+	height:10px;
+	text-decoration:none;
+}
+th.alq{
+	width:400px;
+	height:10px;
+	color: yellow;
+	text-align:left;
+	font-size:15px;
+	border:solid white 1px;	
+}
+
+label.opciones {
+float: left;
+}
+
+input.alq{
+	float:right;
+}
+
+fieldset.alq{
+
+}
+
+img.cancha{
+margin-left:110px;
+margin-bottom:5%;
+border:solid black;
+height:200px;
+}
