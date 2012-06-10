@@ -1,0 +1,78 @@
+propel:
+  _attributes:
+    package: lib.model
+    defaultIdMethod: native
+  alquiler:
+    _attributes: { phpName: Alquiler, idMethod: native }
+    idalquiler: { phpName: Idalquiler, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    cancha: { phpName: Cancha, type: INTEGER, size: '1', sqlType: 'int(1) unsigned', required: true }
+    fecha: { phpName: Fecha, type: TIMESTAMP, required: true, defaultExpr: CURRENT_TIMESTAMP }
+    indumentaria: { phpName: Indumentaria, type: BOOLEAN, size: '1', required: true, defaultValue: false }
+    duchas: { phpName: Duchas, type: BOOLEAN, size: '1', required: true, defaultValue: false }
+    confiteria: { phpName: Confiteria, type: BOOLEAN, size: '1', required: true, defaultValue: false }
+    clienteid: { phpName: Clienteid, type: INTEGER, size: '10', sqlType: 'int(10) unsigned', required: true, foreignTable: cliente, foreignReference: idcliente }
+    _indexes: { fk_alquiler_cliente1: [clienteid] }
+    _uniques: { cancha_UNIQUE: [cancha, fecha] }
+  categoria:
+    _attributes: { phpName: Categoria, idMethod: native }
+    idcategoria: { phpName: Idcategoria, type: INTEGER, size: '10', sqlType: 'int(10) unsigned', primaryKey: true, autoIncrement: true, required: true }
+    nombre: { phpName: Nombre, type: VARCHAR, size: '45', required: true }
+  cliente:
+    _attributes: { phpName: Cliente, idMethod: native }
+    idcliente: { phpName: Idcliente, type: INTEGER, size: '10', sqlType: 'int(10) unsigned', primaryKey: true, autoIncrement: true, required: true }
+    user: { phpName: User, type: VARCHAR, size: '45', required: true, index: unique }
+    nombre: { phpName: Nombre, type: VARCHAR, size: '45', required: true }
+    apellido: { phpName: Apellido, type: VARCHAR, size: '45', required: true }
+    dni: { phpName: Dni, type: VARCHAR, size: '45', required: true }
+    fechanac: { phpName: Fechanac, type: DATE, required: true }
+    direccion: { phpName: Direccion, type: VARCHAR, size: '45', required: true }
+    localidad: { phpName: Localidad, type: VARCHAR, size: '45', required: true }
+    telcel: { phpName: Telcel, type: VARCHAR, size: '45', required: true }
+    email: { phpName: Email, type: VARCHAR, size: '45', required: true }
+    password: { phpName: Password, type: VARCHAR, size: '45', required: true }
+    equipoid: { phpName: Equipoid, type: INTEGER, required: false, foreignTable: equipo, foreignReference: idequipo }
+    _indexes: { fk_Cliente_Equipo1: [equipoid] }
+  compra:
+    _attributes: { phpName: Compra, idMethod: native }
+    idcompra: { phpName: Idcompra, type: INTEGER, size: '10', sqlType: 'int(10) unsigned', primaryKey: true, autoIncrement: true, required: true }
+    cantidad: { phpName: Cantidad, type: INTEGER, size: '10', sqlType: 'int(10) unsigned', required: true }
+    fecha: { phpName: Fecha, type: TIMESTAMP, required: true, defaultExpr: CURRENT_TIMESTAMP }
+    clienteid: { phpName: Clienteid, type: INTEGER, size: '10', sqlType: 'int(10) unsigned', required: false, foreignTable: cliente, foreignReference: idcliente }
+    productoid: { phpName: Productoid, type: INTEGER, size: '10', sqlType: 'int(10) unsigned', required: false, foreignTable: producto, foreignReference: idproducto }
+    _indexes: { fk_Compra_Cliente1: [clienteid], fk_compra_producto1: [productoid] }
+  empleado:
+    _attributes: { phpName: Empleado, idMethod: native }
+    idempleado: { phpName: Idempleado, type: INTEGER, size: '10', sqlType: 'int(10) unsigned', primaryKey: true, autoIncrement: true, required: true }
+    nombre: { phpName: Nombre, type: VARCHAR, size: '45', required: true }
+    apellido: { phpName: Apellido, type: VARCHAR, size: '45', required: true }
+    dni: { phpName: Dni, type: VARCHAR, size: '45', required: true }
+    direccion: { phpName: Direccion, type: VARCHAR, size: '45', required: true }
+    fechanac: { phpName: Fechanac, type: DATE, required: true }
+    telcel: { phpName: Telcel, type: VARCHAR, size: '45', required: true }
+    usuario: { phpName: Usuario, type: VARCHAR, size: '45', required: true, index: unique }
+    password: { phpName: Password, type: VARCHAR, size: '45', required: true }
+    email: { phpName: Email, type: VARCHAR, size: '45', required: true }
+  equipo:
+    _attributes: { phpName: Equipo, idMethod: native }
+    idequipo: { phpName: Idequipo, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    nombre: { phpName: Nombre, type: VARCHAR, size: '45', required: true }
+    torneoid: { phpName: Torneoid, type: INTEGER, required: true, foreignTable: torneo, foreignReference: idtorneo }
+    _indexes: { fk_Equipo_Torneo1: [torneoid] }
+  producto:
+    _attributes: { phpName: Producto, idMethod: native }
+    idproducto: { phpName: Idproducto, type: INTEGER, size: '10', sqlType: 'int(10) unsigned', primaryKey: true, autoIncrement: true, required: true }
+    codigo: { phpName: Codigo, type: INTEGER, size: '10', sqlType: 'int(10) unsigned', required: true }
+    descripcion: { phpName: Descripcion, type: VARCHAR, size: '45', required: true }
+    modelo: { phpName: Modelo, type: VARCHAR, size: '45', required: true }
+    tamanio: { phpName: Tamanio, type: VARCHAR, size: '45', required: false }
+    precio: { phpName: Precio, type: DECIMAL, size: '5', scale: '2', sqlType: 'decimal(5,2) unsigned', required: true }
+    stock: { phpName: Stock, type: VARCHAR, size: '45', required: true }
+    categoriaid: { phpName: Categoriaid, type: INTEGER, size: '10', sqlType: 'int(10) unsigned', required: true, foreignTable: categoria, foreignReference: idcategoria }
+    _indexes: { fk_producto_categoria1: [categoriaid] }
+  torneo:
+    _attributes: { phpName: Torneo, idMethod: native }
+    idtorneo: { phpName: Idtorneo, type: INTEGER, primaryKey: true, autoIncrement: true, required: true }
+    temporada: { phpName: Temporada, type: TIMESTAMP, required: false }
+    torneo: { phpName: Torneo, type: VARCHAR, size: '45', required: false }
+    campeon: { phpName: Campeon, type: VARCHAR, size: '45', required: true }
+    subcampeon: { phpName: Subcampeon, type: VARCHAR, size: '45', required: false }

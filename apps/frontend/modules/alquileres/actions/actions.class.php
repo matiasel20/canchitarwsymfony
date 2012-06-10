@@ -37,6 +37,8 @@ class alquileresActions extends sfActions
         'sabado' => array(),
         'domingo' => array()
     );
+	
+	
     
     $hora_inicio=8;
     $hora_fin=20;
@@ -55,33 +57,37 @@ class alquileresActions extends sfActions
     $this->dia_limite=8;
    
     $this->fecha=array();
-    $this->horario=array(array());
+    $this->horario=array(1=>array(array()),2=>array(array()),3=>array(array()));
+    $this->dia=array();
     
-    for($i=0;$i<$this->dia_limite;$i++)
-    {  
-        $j=$i+$num_dia-1;//indice para el dia de la semana correspondiente;
-        
-        if($i!=0)
-        {
-            $this->horario[$i]=$semana[$nombre_dias[$j%7]];
-        }
-        else
-        {
-            if($num_hora <$hora_fin)
-            {
-                      for ($k=$num_hora+1;$k<=$hora_fin;$k++)
-                      {
-                        $this->horario[$i][]=$k;
-                      }
-            }
+	for($c=1;$c<=3;$c++)
+	{
+		for($i=0;$i<$this->dia_limite;$i++)
+		{  
+			$j=$i+$num_dia-1;//indice para el dia de la semana correspondiente;
+			
+			if($i!=0)
+			{
+				$this->horario[$c][$i]=$semana[$nombre_dias[$j%7]];
+			}
+			else
+			{
+				if($num_hora <$hora_fin and $num_hora>=$hora_inicio)
+				{
+						  for ($k=$num_hora+1;$k<=$hora_fin;$k++)
+						  {
+							$this->horario[$c][$i][]=$k;
+						  }
+				}
 
-        }                
-        
-        $this->fecha[$i]=$nombre_dias[$j%7]." ".$this->calcularfecha($i);
-        
-        //$nombre_dias[$j%7]." ".calcularfecha($i)
-        
-    }
+			}                
+			
+			$this->fecha[$i]=$this->calcularfecha($i);
+			
+			$this->dia[$i]=$nombre_dias[$j%7];
+			
+		}
+	}
     
   }
   

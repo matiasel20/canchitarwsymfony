@@ -6,16 +6,19 @@
     <li><a href="#tabs-3">Cancha 3</br>(Futbol 8)</a></li>
   </ul>
   
-  <?php foreach ($valores_cancha as $numero => $archivo) :?>
-  <div id="tabs-<?php echo $numero; ?>">
+  <?php foreach ($valores_cancha as $c => $archivo) :?>
+  <div id="tabs-<?php echo $c; ?>">
       
     <img class="cancha" src="<?php echo image_path($archivo)?>" alt="pp"/>
     
     <?php for($i=0;$i<$dia_limite;$i++): ?>
-    <label style="color:yellow;margin-left:8em"><?php echo $fecha[$i];?></label>
+    <label style="color:yellow;margin-left:8em"><?php echo $dia[$i]." ".$fecha[$i];?></label>
     <table class="alq">
     
     <form name="formulario" method="post" action="LogIn.html">
+        
+    <input type="hidden" value="<?php echo $c ?>" name="cancha"/>
+    <input type="hidden" value="<?php echo $fecha[$i] ?>" name="fecha"/>
       
     <tr>
         
@@ -23,7 +26,7 @@
       <fieldset>
         <label class= "option" for="localidad" style="font-size:23px">Horario:</br></br></label>
         <select name="horarios" class="required">
-          <?php foreach($horario[$i] as $hora):?>                                          
+          <?php foreach($horario[$c][$i] as $hora):?>                                          
           <option value='<?php echo $hora?>'> <?php echo $hora.':00 hs'?> </option>                                              
           <?php endforeach;?>
        </select>

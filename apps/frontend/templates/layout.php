@@ -42,8 +42,8 @@
 <div class="principal">
 	<div class="left">
 		<div style="text-align: center">
-			<?php if (isset($_SESSION['usuario'])):?>
-				<label sytle="text-align: right"><?php echo $_SESSION['usuario']?> <a href="funciones/logout.php" >cerrar sesion</a></label>
+			<?php if($sf_user->isAuthenticated()):?>
+				<label sytle="text-align: right"><?php echo $sf_user->getAttribute('usuario')?> <a href="<?php echo url_for('login/logout') ?>" >cerrar sesion</a></label>
             <?php elseif (isset($_SESSION['empleado'])):?>
 				<label sytle="text-align: right"><?php echo $_SESSION['empleado']?> <a href="funciones/logout.php" >cerrar sesion</a></label>
 			<?php endif;?>
@@ -52,12 +52,12 @@
 		<div class="menu">
 			<a id="format" class="Pisado" href="Index.php">Inicio</a>
 			<?php if(!isset($_SESSION['usuario']) and !isset($_SESSION['empleado'])):?>
-				<a id="format" class="link" href="LogIn.php">Entrar</a>
+			<a id="format" class="link" href="<?php echo url_for('login/index') ?>">Entrar</a>
 			<?php endif;?>
-			<a id="format" class="link" href="Registro.php">Registrarse</a>	
-			<a id="format" class="link" href="Torneos.php">Torneos</a>			
-			<a id="format" class="link" href="Compras.php">Compras</a>
-			<a id="format" class="link" href="Alquileres.php">Alquileres</a>
+			<a id="format" class="link" href="<?php echo url_for('registro/index') ?>">Registrarse</a>	
+			<a id="format" class="link" href="<?php echo url_for('torneos/index') ?>">Torneos</a>			
+			<a id="format" class="link" href="<?php echo url_for('compras/index') ?>">Compras</a>
+			<a id="format" class="link" href="<?php echo url_for('alquileres/index') ?>">Alquileres</a>
 			<a id="format" class="link" href="Proveedores.php">Proveedores</a>
 			<?php if(isset($_SESSION['empleado'])):?>
 				<a id="format" class="link" href="Administracion.php">Administracion</a>
