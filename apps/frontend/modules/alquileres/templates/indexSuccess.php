@@ -1,6 +1,4 @@
-<?php slot('alquileres') ?>
-<a id="format" class="Pisado" href="<?php echo url_for('alquileres/index') ?>">Alquileres</a>	
-<?php end_slot() ?>
+<?php slot('alquileres', 'Pisado') ?>
 
 <div id="tabs">
 		

@@ -49,32 +49,15 @@
 			<?php endif;?>
         </div> 
 
-		<div class="menu">
-			<?php if (!include_slot('inicio')): ?>
-			<a id="format" class="link" href="Index.php">Inicio</a>	
-			<?php endif; ?>
-			<?php if (!include_slot('entrar')): ?>
-			<a id="format" class="link" href="<?php echo url_for('login/index') ?>">Entrar</a>	
-			<?php endif; ?>
-			<?php if (!include_slot('registrarse')): ?>
-			<a id="format" class="link" href="<?php echo url_for('registro/index') ?>">Registrarse</a>	
-			<?php endif; ?>
-			<?php if (!include_slot('torneos')): ?>
-			<a id="format" class="link" href="<?php echo url_for('torneos/index') ?>">Torneos</a>
-			<?php endif; ?>		
-			<?php if (!include_slot('compras')): ?>
-			<a id="format" class="link" href="<?php echo url_for('compras/index') ?>">Compras</a>
-			<?php endif; ?>
-			<?php if (!include_slot('alquileres')): ?>
-			<a id="format" class="link" href="<?php echo url_for('alquileres/index') ?>">Alquileres</a>
-			<?php endif; ?>
-			<?php if (!include_slot('proveedores')): ?>
-			<a id="format" class="link" href="Proveedores.php">Proveedores</a>	
-			<?php endif; ?>
-			<?php if (!include_slot('administracion')): ?>
-			<a id="format" class="link" href="Administracion.php">Administracion</a>
-			<?php endif; ?>
-					
+		<div class="menu">			
+			<a id="format" class="<?php if (!include_slot('inicio')): ?>link<?php endif; ?>" href="Index.php">Inicio</a>							
+			<a id="format" class="<?php if (!include_slot('entrar')): ?>link<?php endif; ?>" href="<?php echo url_for('login/index') ?>">Entrar</a>			
+			<a id="format" class="<?php if (!include_slot('registrarse')): ?>link<?php endif; ?>" href="<?php echo url_for('registro/index') ?>">Registrarse</a>						
+			<a id="format" class="<?php if (!include_slot('torneos')): ?>link<?php endif; ?>" href="<?php echo url_for('torneos/index') ?>">Torneos</a>					
+			<a id="format" class="<?php if (!include_slot('compras')): ?>link<?php endif; ?>" href="<?php echo url_for('compras/index') ?>">Compras</a>						
+			<a id="format" class="<?php if (!include_slot('alquileres')): ?>link<?php endif; ?>" href="<?php echo url_for('alquileres/index') ?>">Alquileres</a>						
+			<a id="format" class="<?php if (!include_slot('proveedores')): ?>link<?php endif; ?>" href="Proveedores.php">Proveedores</a>			
+			<a id="format" class="<?php if (!include_slot('administracion')): ?>link<?php endif; ?>" href="Administracion.php">Administracion</a>					
 		</div>
       
     </div>

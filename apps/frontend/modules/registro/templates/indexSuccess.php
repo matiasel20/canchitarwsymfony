@@ -1,6 +1,4 @@
-<?php slot('registrarse') ?>
-<a id="format" class="Pisado" href="<?php echo url_for('alquileres/index') ?>">Registrarse</a>	
-<?php end_slot() ?>
+<?php slot('registrarse', 'Pisado') ?>
 
 <div class="center">
 		<div class="contenido1" style="text-align:left">

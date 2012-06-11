@@ -1,6 +1,4 @@
-<?php slot('entrar') ?>
-<a id="format" class="Pisado" href="<?php echo url_for('alquileres/index') ?>">Entrar</a>	
-<?php end_slot() ?>
+<?php slot('entrar', 'Pisado') ?>
 
 <div class="contenido1" style="text-align: left">
 <form id="formulario" method="post" action="<?php echo url_for('login/index');?>">
