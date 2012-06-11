@@ -1,3 +1,7 @@
+<?php slot('inicio') ?>
+<a id="format" class="Pisado" href="<?php echo url_for('alquileres/index') ?>">Inicio</a>	
+<?php end_slot() ?>
+
 <div class="contenido1">
         <b>Galeria de Imagenes</b>
 

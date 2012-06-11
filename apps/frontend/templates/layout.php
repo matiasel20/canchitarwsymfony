@@ -50,18 +50,31 @@
         </div> 
 
 		<div class="menu">
-			<a id="format" class="Pisado" href="Index.php">Inicio</a>
-			<?php if(!isset($_SESSION['usuario']) and !isset($_SESSION['empleado'])):?>
-			<a id="format" class="link" href="<?php echo url_for('login/index') ?>">Entrar</a>
-			<?php endif;?>
+			<?php if (!include_slot('inicio')): ?>
+			<a id="format" class="link" href="Index.php">Inicio</a>	
+			<?php endif; ?>
+			<?php if (!include_slot('entrar')): ?>
+			<a id="format" class="link" href="<?php echo url_for('login/index') ?>">Entrar</a>	
+			<?php endif; ?>
+			<?php if (!include_slot('registrarse')): ?>
 			<a id="format" class="link" href="<?php echo url_for('registro/index') ?>">Registrarse</a>	
-			<a id="format" class="link" href="<?php echo url_for('torneos/index') ?>">Torneos</a>			
+			<?php endif; ?>
+			<?php if (!include_slot('torneos')): ?>
+			<a id="format" class="link" href="<?php echo url_for('torneos/index') ?>">Torneos</a>
+			<?php endif; ?>		
+			<?php if (!include_slot('compras')): ?>
 			<a id="format" class="link" href="<?php echo url_for('compras/index') ?>">Compras</a>
+			<?php endif; ?>
+			<?php if (!include_slot('alquileres')): ?>
 			<a id="format" class="link" href="<?php echo url_for('alquileres/index') ?>">Alquileres</a>
-			<a id="format" class="link" href="Proveedores.php">Proveedores</a>
-			<?php if(isset($_SESSION['empleado'])):?>
-				<a id="format" class="link" href="Administracion.php">Administracion</a>
-			<?php endif;?>	
+			<?php endif; ?>
+			<?php if (!include_slot('proveedores')): ?>
+			<a id="format" class="link" href="Proveedores.php">Proveedores</a>	
+			<?php endif; ?>
+			<?php if (!include_slot('administracion')): ?>
+			<a id="format" class="link" href="Administracion.php">Administracion</a>
+			<?php endif; ?>
+					
 		</div>
       
     </div>
