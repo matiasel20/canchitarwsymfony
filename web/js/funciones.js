@@ -3,12 +3,12 @@
 var img = new Array()
 	var i=0
 
-	img[0]="noticias/noticia1.JPG"
-	img[1]="noticias/noticia2.JPG"
-	img[2]="noticias/noticia3.JPG"
-	img[3]="noticias/noticia4.JPG"
-	img[4]="noticias/noticia5.JPG"
-	img[5]="noticias/noticia6.JPG"
+	img[0]="../images/noticias/noticia1.JPG"
+	img[1]="../images/noticias/noticia2.JPG"
+	img[2]="../images/noticias/noticia3.JPG"
+	img[3]="../images/noticias/noticia4.JPG"
+	img[4]="../images/noticias/noticia5.JPG"
+	img[5]="../images/noticias/noticia6.JPG"
 
 
 	function backward(){

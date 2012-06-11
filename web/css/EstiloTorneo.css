@@ -1,0 +1,29 @@
+img.campeon {width:400px;height:200px;
+float:left;
+margin-bottom:3%;
+margin-top:3%;
+border:solid black;
+
+}
+
+table.torneo{
+
+border: solid black 3px;
+width:400px;
+height:250px;
+border-bottom:none;
+}
+td{
+text-align:center;
+border-bottom: solid 3px black;
+color: white;
+font-weight:bold;
+text-decoration: underline;
+}
+th{
+border-bottom: solid 3px black;
+color: #ffff66;
+
+text-align:center;
+
+}
