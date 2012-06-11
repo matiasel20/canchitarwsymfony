@@ -5,7 +5,7 @@ Options +FollowSymLinks +ExecCGI
 
   # uncomment the following line, if you are having trouble
   # getting no_script_name to work
-  RewriteBase /tp2
+  RewriteBase /canchitarwsymfony/frontend_dev.php/principal
 
   # we skip all files with .something
   #RewriteCond %{REQUEST_URI} \..+$
@@ -18,5 +18,5 @@ Options +FollowSymLinks +ExecCGI
   RewriteCond %{REQUEST_FILENAME} !-f
 
   # no, so we redirect to our front web controller
-  RewriteRule ^(.*)$ index.php [QSA,L]
+  RewriteRule ^(.*)$ index [QSA,L]
 </IfModule>
