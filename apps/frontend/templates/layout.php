@@ -50,14 +50,14 @@
         </div> 
 
 		<div class="menu">			
-			<a id="format" class="<?php if (!include_slot('inicio')): ?>link<?php endif; ?>" href="Index.php">Inicio</a>							
+			<a id="format" class="<?php if (!include_slot('inicio')): ?>link<?php endif; ?>" href="<?php echo url_for('principal/index') ?>">Inicio</a>							
 			<a id="format" class="<?php if (!include_slot('entrar')): ?>link<?php endif; ?>" href="<?php echo url_for('login/index') ?>">Entrar</a>			
 			<a id="format" class="<?php if (!include_slot('registrarse')): ?>link<?php endif; ?>" href="<?php echo url_for('registro/index') ?>">Registrarse</a>						
 			<a id="format" class="<?php if (!include_slot('torneos')): ?>link<?php endif; ?>" href="<?php echo url_for('torneos/index') ?>">Torneos</a>					
 			<a id="format" class="<?php if (!include_slot('compras')): ?>link<?php endif; ?>" href="<?php echo url_for('compras/index') ?>">Compras</a>						
 			<a id="format" class="<?php if (!include_slot('alquileres')): ?>link<?php endif; ?>" href="<?php echo url_for('alquileres/index') ?>">Alquileres</a>						
-			<a id="format" class="<?php if (!include_slot('proveedores')): ?>link<?php endif; ?>" href="Proveedores.php">Proveedores</a>			
-			<a id="format" class="<?php if (!include_slot('administracion')): ?>link<?php endif; ?>" href="Administracion.php">Administracion</a>					
+			<a id="format" class="<?php if (!include_slot('proveedores')): ?>link<?php endif; ?>" href="<?php echo url_for('proveedores/index') ?>">Proveedores</a>			
+			<a id="format" class="<?php if (!include_slot('administracion')): ?>link<?php endif; ?>" href="<?php echo url_for('administracion/index') ?>">Administracion</a>					
 		</div>
       
     </div>

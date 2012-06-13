@@ -1,14 +1,14 @@
 <?php
 
 /**
- * compras actions.
+ * proveedores actions.
  *
  * @package    tp2
- * @subpackage compras
+ * @subpackage proveedores
  * @author     Your name here
  * @version    SVN: $Id: actions.class.php 23810 2009-11-12 11:07:44Z Kris.Wallsmith $
  */
-class comprasActions extends sfActions
+class proveedoresActions extends sfActions
 {
  /**
   * Executes index action
@@ -18,15 +18,5 @@ class comprasActions extends sfActions
   public function executeIndex(sfWebRequest $request)
   {
     //$this->forward('default', 'module');
-    $this->arreglo=$this->sacacat();
-      
   }
-  
-  private function sacacat(){
- 
-        $categoria=CategoriaQuery::create();
-        return $categoria->find();
-      
-  }
-  
 }
