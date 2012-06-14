@@ -1,5 +1,7 @@
 <?php slot('alquileres', 'Pisado') ?>
 
+<?php echo $alert?>
+
 <div id="tabs">
 		
   <ul>
@@ -12,6 +14,8 @@
   <div id="tabs-<?php echo $c; ?>">
       
     <img class="cancha" src="<?php echo image_path($archivo)?>" alt="pp"/>
+
+    <label style="color:#8D0202"><?php echo $msj_sesion?></label><br>
     
     <?php for($i=0;$i<$dia_limite;$i++): ?>
     <label style="color:yellow;margin-left:8em"><?php echo $dia[$i]." ".$fecha[$i];?></label>
@@ -66,9 +70,10 @@
       </form>    
         
     </table>
-    <?php endfor ?>
+    <?php endfor ?>	
     
   </div>  
   <?php endforeach ?>
+  
     
 </div>

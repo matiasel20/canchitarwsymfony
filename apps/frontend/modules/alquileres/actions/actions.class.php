@@ -17,7 +17,11 @@ class alquileresActions extends sfActions
   */
   public function executeIndex(sfWebRequest $request)
   {
-      
+    //seteo mensajes template por defecto
+    $this->msj_sesion="";
+    $this->alert="";
+    
+    //declaro arreglo con nombre de los dias de la semana
     $nombre_dias = array('lunes','martes','miercoles','jueves','viernes','sabado','domingo');
 
     //$this->forward('default', 'module');
@@ -26,6 +30,13 @@ class alquileresActions extends sfActions
         2=>"cancha5 2.jpg",
         3=>"cancha8.jpg"
     );  
+	
+    if (!$this->getUser()->isAuthenticated())
+    {
+            $this->msj_sesion="Usuario no identificado";
+            $this->dia_limite=0;
+            return sfView::SUCCESS;
+    }   
     
     //vector donde se guardan los horarios disponibles correspondiente al dia de la semana
     $semana = array(
