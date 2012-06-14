@@ -64,12 +64,12 @@ class administracionActions extends sfActions
       $pdt= ProductoQuery::create();
       //$pdt->filterByIdproducto($request->getParameter('idp'))
       //    ->findOne(); lo q es = a findPK()
-      $pdt->findPk($request->getParameter('idp'));
-      //if($pdt){
-          $pdt->delete($pdt != NULL);
-      //}else{
-          
-      //}
+      $prod = $pdt->findPk($request->getParameter('idp'));
+      if($prod){
+          $prod->delete();
+      }else{
+          $this->forward404('No existe el producto a borrar');
+      }
       $this->redirect('administracion/index');
 
 
