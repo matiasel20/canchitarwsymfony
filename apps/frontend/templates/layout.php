@@ -62,7 +62,7 @@
       
     </div>
 
-    <div class="center">
+    <div class="center" style="width: 75%">
 
 	
           <?php echo $sf_content ?>

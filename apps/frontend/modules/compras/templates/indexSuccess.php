@@ -8,11 +8,11 @@
         
 
         foreach($arreglo as $fila):?>
-
+            <?php if (! $fila->getProductos()->isEmpty()):?>
             <h3><a href="#"><?php echo $fila->getNombre();?></a></h3>
             <div class="divTabla">
             <?php $results2= $fila->getProductos();?>
-    <div style="font-size:12px; color: white; overflow: auto; width: 450px; height: 200px">
+            <div style="font-size:12px; color: white; overflow: auto; width: 450px; height: 200px">
         <table border="1">
             <tr>
               <td>Codigo</td><td>Descripcion</td><td>Modelo</td><td>Tamanio</td><td>Precio</td>
@@ -37,8 +37,10 @@
             <?php endforeach;?>
         </table>
      </div>
+     
 
             </div>
+            <?php endif;?>
         <?php endforeach;?>
 
     </div>
