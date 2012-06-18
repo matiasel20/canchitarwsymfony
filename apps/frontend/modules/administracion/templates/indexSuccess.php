@@ -29,7 +29,7 @@
           <td>
               <a href="<?php echo url_for('administracion/borrar').'?idp='.$idX?>">Borrar</a>
           </td>
-          <td><a href="funciones/abmProductos/modificaP.php?idX=<?php echo $prod->getIdproducto()?>">Modificar</a></td>
+          <td><a href="<?php echo url_for('modifProd/index').'?idX='.$idX?>">Modificar</a></td>
         </tr>
         <?php endforeach;?>
         </table>
@@ -48,7 +48,7 @@
     <td valign="top" rowspan="2">
     
     <font size="5"><u>Insertar</u></font>
-        <form id="formulario5"action="funciones/abmProductos/insertarP.php" method="post">
+        <form id="formulario5"action="#" method="post">
             Codigo<br>
             <input type="text" name="codigo" class="required digits"><br>
 
