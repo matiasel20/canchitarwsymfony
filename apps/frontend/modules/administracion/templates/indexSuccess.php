@@ -7,9 +7,9 @@
 <!------------------------------MOSTRAR TABLA PRODUCTO------------------------------>
 
 
-<fieldset style="width: 475px">
-    <legend><h2>Tabla Productos!</h2></legend>
-    <div style="font-size:12px; color: white; overflow: auto; width: 600px; height: 100px">
+<fieldset style="width: 500px">
+    <legend><h2>Tabla Productos!-----<a href="<?php echo url_for('modifProd/new')?>">Nuevo</a>------</h2></legend>
+    <div style="font-size:12px; color: white; overflow: auto; width: 500px; height: 100px">
         <table border="1" >
         <tr>
             <td>Id</td><td>codigo</td><td>descripcion</td><td>modelo</td><td>tamanio</td>
@@ -26,92 +26,19 @@
             <td><?php echo $prod->getPrecio();?></td>
             <td><?php echo $prod->getStock();?></td>
             <td><?php echo $prod->getCategoria()->getNombre();?></td>
-          <td>
-              <a href="<?php echo url_for('administracion/borrar').'?idp='.$idX?>">Borrar</a>
-          </td>
-          <td><a href="<?php echo url_for('modifProd/index').'?idX='.$idX?>">Modificar</a></td>
+          <td><a href="<?php echo url_for('administracion/borrar').'?idp='.$idX?>">Borrar</a></td>
+          <td><a href="<?php echo url_for('modifProd/edit').'?idproducto='.$idX?>">Modificar</a></td>
         </tr>
         <?php endforeach;?>
         </table>
     </div>
-    <h2 style="color: orange">Arreglar borrar y modificar</h2>
 </fieldset>
 </br>
 
 <!--===============================================================================-->
-<!------------------------------INGRESO DE PRODUCTO---------------------------------->
-<table border="1" style="color: white" >
-<tr>
-    <td style="text-align: center" colspan="2">Productos</td>
-</tr>
-
-    <td valign="top" rowspan="2">
-    
-    <font size="5"><u>Insertar</u></font>
-        <form id="formulario5"action="#" method="post">
-            Codigo<br>
-            <input type="text" name="codigo" class="required digits"><br>
-
-                        Descripcion<br>
-            <input type="text" name="descripcion" class="required"><br>
-            
-                        Modelo<br>
-            <input type="text" name="modelo" class="required"><br>
-            
-                        Tamanio<br>
-            <input type="text" name="tamanio" class="required"><br>
-            
-                        Precio<br>
-            <input type="text" name="precio" class="required"><br>
- 
-                        Stock<br>
-            <input type="text" name="stock" class="required digits"><br>
-
-            <label class= "option" for="categoriaid">Categoria</label>
-               <select id="categoriaid" name="categoriaid" class="required">
-                       <option>Seleccione...</option>
-                          <?php foreach($cats as $fila):?>
-                       <option value=<?php echo $fila->getIdcategoria();?>><?php echo $fila->getNombre();?></option>
-
-                          <?php endforeach; ?>
-               </select><br>
-            
-            <input type="submit" value="ingresar">
-            <h2 style="color: orange">Arreglar botones</h2>
-        </form>
-        <br>
-        </td>
-
-
-  <td valign="top">     
-   
-      <font size="5"><u>Eliminar</u></font>
-        <form id="formulario4"action="funciones/abmProductos/borraP.php" method="post">
-            ID<br>
-            <input type="text" name="id" class="required digits"><br>
-            
-           <input type="submit" value="borrar">
-        </form>
-        <br>
-  </td>
-  <tr>
-      <td valign="top">
-    <font size="5"><u>Modificar</u></font> 
-        <form id="formulario3" action="funciones/abmProductos/modificaP.php" method="post">
-            ID<br>
-            <input type="text" name="id" class="required digits"><br>
-            
-           <input type="submit" value="modifica">
-        </form>
-
-
-    </td>
-    </tr>
-</table>
-<!--===============================================================================-->
 <!-----------------------------------------USUARIOS---------------------------------->
 <fieldset>
-    <legend><h2>Tabla Usuario!</h2></legend>
+    <legend><h2>Tabla Usuario!-----<a href="<?php echo url_for('modifUser/new')?>">Nuevo</a>----</h2></legend>
      <div style="font-size:12px; color: white; overflow: auto; width: 800px; height: 100px">
         <table border="1">
             <tr>
@@ -122,6 +49,7 @@
             <?php foreach($user as $useraux):?>
                 <tr>
                     <td><?php echo $useraux->getIdcliente();?></td>
+                    <? $idX = $useraux->getIdcliente()?>
                     <td><?php echo $useraux->getUser();?></td>
                     <td><?php echo $useraux->getNombre();?></td>
                     <td><?php echo $useraux->getApellido();?></td>
@@ -132,80 +60,14 @@
                     <td><?php echo $useraux->getTelcel();?></td>
                     <td><?php echo $useraux->getEmail();?></td>
                   <td><?php echo "****";?></td>
-                  <td><a href="funciones/abmUsuarios/borra.php?idX=<?php echo $useraux->getIdcliente()?>">Borrar</a></td>
-                  <td><a href="funciones/abmUsuarios/modifica.php?idX=<?php echo $useraux->getIdcliente()?>">Modificar</a></td>
+                  <td><a href="<?php echo url_for('modifUser/delete').'?idcliente='.$idX?>">Borrar</a></td>
+                  <td><a href="<?php echo url_for('modifUser/edit').'?idcliente='.$idX?>">Modificar</a></td>
                 </tr>
             <?php endforeach;?>
         </table>
      </div>
  </fieldset>
 </br>
-
-<!--===============================================================================-->
-<!------------------------------INGRESO DE USUARIOS---------------------------------->
-<table border="1" style="color: white" >
-<tr>
-    <td valign="top" rowspan="2">
-    <font size="5"><u>Insertar</u></font>
-        <form  id="formulario" action="funciones/abmUsuarios/insertar.php" method="post" >
-            User<br>
-            <input type="text" name="user" id="user" minlength="4" class="required"/><br>
-            Nombre<br>
-            <input type="text" name="nombre" class="required"><br>
-            Apellido<br>
-            <input type="text" name="apellido" class="required"><br>
-            
-                        DNI<br>
-            <input type="text" name="dni" class="required digits"><br>
-                        Fecha Nacimiento<br>
-            <input type="text" name="fechanac" id="cuenta" value= ""  class="required"/><br>
-                        Direccion<br>
-            <input type="text" name="direccion" ><br>
-            <label class= "option" for="localidad">Localidad:</label>
-               <select id="localidad"  name="localidad" class="required">
-                       <option value="">Seleccione...</option>
-                       <option value="1">Rawson</option>
-                       <option value="2">Trelew</option>
-                       <option value="3">P.Madryn</option>
-               </select><br>
-                        Telcel<br>
-            <input type="text" name="telcel"><br>
-                        Email<br>
-            <input type="text" name="email" id="mail" class="required email"><br>
-                        Password<br>
-            <input type="password" name="password" class="required"><br>
-            
- 
-            <input type="submit" value="ingresar">
-        </form>
-        <br>
-        </td>
-<td valign="top">     
-    <font size="5"><u>Eliminar</u></font>
-        <form id="formulario1" action="funciones/abmUsuarios/borra.php" method="post" >
-            ID<br>
-            <input type="text" name="id" id="user" class="required digits"><br>
-            
-           <input type="submit" value="ingresar">
-        </form>
-        <br>
-        
-</td>
-<tr>
-    <td valign="top">
-        <font size="5"><u>Modificar</u></font>
-            <form id="formulario2" action="funciones/abmUsuarios/modifica.php" method="post" >
-                ID<br>
-                <input type="text" name="id" id="user" class="required digits"><br>
-
-               <input type="submit" value="modifica">
-            </form>
-            <br>
-    </td>
-</tr>
-</tr>
-
-</table>
 
 <!--===============================================================================-->
 <!---------------------------------TABLA DE COMPRAS---------------------------------->
