@@ -118,7 +118,7 @@ abstract class BaseCategoriaQuery extends ModelCriteria
 	{
 		$sql = 'SELECT `IDCATEGORIA`, `NOMBRE` FROM `categoria` WHERE `IDCATEGORIA` = :p0';
 		try {
-			$stmt = $con->prepare($sql);
+			$stmt = $con->prepare($sql);			
 			$stmt->bindValue(':p0', $key, PDO::PARAM_INT);
 			$stmt->execute();
 		} catch (Exception $e) {

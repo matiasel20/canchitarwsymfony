@@ -71,11 +71,23 @@ class administracionActions extends sfActions
           $this->forward404('No existe el producto a borrar');
       }
       $this->redirect('administracion/index');
+ }
+
+ function executeCancelar(sfWebRequest $request){
+      $alqs= AlquilerQuery::create();
+      //$pdt->filterByIdproducto($request->getParameter('idA'))
+      //    ->findOne(); lo q es = a findPK()
+      $alq = $alqs->findPk($request->getParameter('idA'));
+      if($alq){
+          $alq->delete();
+      }else{
+          $this->forward404('No existe el producto a borrar');
+      }
+      $this->redirect('administracion/index');
 
 
 
  }
-
  public function executeModificar(sfWebRequest $request){
 
 

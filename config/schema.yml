@@ -42,12 +42,12 @@ propel:
     _indexes: { fk_Compra_Cliente1: [clienteid], fk_compra_producto1: [productoid] }
   empleado:
     _attributes: { phpName: Empleado, idMethod: native }
-    idempleado: { phpName: Idempleado, type: INTEGER, size: '10', sqlType: 'int(10) unsigned', primaryKey: true, autoIncrement: true, required: true }
+    idempleado: { phpName: Idempleado, type: INTEGER, primaryKey: true, required: true }
     nombre: { phpName: Nombre, type: VARCHAR, size: '45', required: true }
     apellido: { phpName: Apellido, type: VARCHAR, size: '45', required: true }
     dni: { phpName: Dni, type: VARCHAR, size: '45', required: true }
     direccion: { phpName: Direccion, type: VARCHAR, size: '45', required: true }
-    fechanac: { phpName: Fechanac, type: DATE, required: true }
+    fechanac: { phpName: Fechanac, type: VARCHAR, size: '45', required: true }
     telcel: { phpName: Telcel, type: VARCHAR, size: '45', required: true }
     usuario: { phpName: Usuario, type: VARCHAR, size: '45', required: true, index: unique }
     password: { phpName: Password, type: VARCHAR, size: '45', required: true }

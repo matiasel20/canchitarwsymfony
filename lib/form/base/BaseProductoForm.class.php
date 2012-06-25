@@ -21,7 +21,7 @@ abstract class BaseProductoForm extends BaseFormPropel
       'tamanio'     => new sfWidgetFormInputText(),
       'precio'      => new sfWidgetFormInputText(),
       'stock'       => new sfWidgetFormInputText(),
-      'categoriaid' => new sfWidgetFormPropelChoice(array('model' => 'Categoria')),
+      'categoriaid' => new sfWidgetFormPropelChoice(array('model' => 'Categoria', 'add_empty' => false)),
     ));
 
     $this->setValidators(array(

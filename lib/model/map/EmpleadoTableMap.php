@@ -36,14 +36,14 @@ class EmpleadoTableMap extends TableMap
 		$this->setPhpName('Empleado');
 		$this->setClassname('Empleado');
 		$this->setPackage('lib.model');
-		$this->setUseIdGenerator(true);
+		$this->setUseIdGenerator(false);
 		// columns
-		$this->addPrimaryKey('IDEMPLEADO', 'Idempleado', 'INTEGER', true, 10, null);
+		$this->addPrimaryKey('IDEMPLEADO', 'Idempleado', 'INTEGER', true, null, null);
 		$this->addColumn('NOMBRE', 'Nombre', 'VARCHAR', true, 45, null);
 		$this->addColumn('APELLIDO', 'Apellido', 'VARCHAR', true, 45, null);
 		$this->addColumn('DNI', 'Dni', 'VARCHAR', true, 45, null);
 		$this->addColumn('DIRECCION', 'Direccion', 'VARCHAR', true, 45, null);
-		$this->addColumn('FECHANAC', 'Fechanac', 'DATE', true, null, null);
+		$this->addColumn('FECHANAC', 'Fechanac', 'VARCHAR', true, 45, null);
 		$this->addColumn('TELCEL', 'Telcel', 'VARCHAR', true, 45, null);
 		$this->addColumn('USUARIO', 'Usuario', 'VARCHAR', true, 45, null);
 		$this->addColumn('PASSWORD', 'Password', 'VARCHAR', true, 45, null);

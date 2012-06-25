@@ -733,13 +733,13 @@ abstract class BaseAlquiler extends BaseObject  implements Persistent
 			$stmt = $con->prepare($sql);
 			foreach ($modifiedColumns as $identifier => $columnName) {
 				switch ($columnName) {
-					case '`IDALQUILER`':
+					case '`IDALQUILER`':						
 						$stmt->bindValue($identifier, $this->idalquiler, PDO::PARAM_INT);
 						break;
-					case '`CANCHA`':
+					case '`CANCHA`':						
 						$stmt->bindValue($identifier, $this->cancha, PDO::PARAM_INT);
 						break;
-					case '`FECHA`':
+					case '`FECHA`':						
 						$stmt->bindValue($identifier, $this->fecha, PDO::PARAM_STR);
 						break;
 					case '`INDUMENTARIA`':
@@ -751,7 +751,7 @@ abstract class BaseAlquiler extends BaseObject  implements Persistent
 					case '`CONFITERIA`':
 						$stmt->bindValue($identifier, (int) $this->confiteria, PDO::PARAM_INT);
 						break;
-					case '`CLIENTEID`':
+					case '`CLIENTEID`':						
 						$stmt->bindValue($identifier, $this->clienteid, PDO::PARAM_INT);
 						break;
 				}

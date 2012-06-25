@@ -155,41 +155,13 @@ abstract class BaseEmpleado extends BaseObject  implements Persistent
 	}
 
 	/**
-	 * Get the [optionally formatted] temporal [fechanac] column value.
+	 * Get the [fechanac] column value.
 	 * 
-	 *
-	 * @param      string $format The date/time format string (either date()-style or strftime()-style).
-	 *							If format is NULL, then the raw DateTime object will be returned.
-	 * @return     mixed Formatted date/time value as string or DateTime object (if format is NULL), NULL if column is NULL, and 0 if column value is 0000-00-00
-	 * @throws     PropelException - if unable to parse/validate the date/time value.
+	 * @return     string
 	 */
-	public function getFechanac($format = 'Y-m-d')
+	public function getFechanac()
 	{
-		if ($this->fechanac === null) {
-			return null;
-		}
-
-
-		if ($this->fechanac === '0000-00-00') {
-			// while technically this is not a default value of NULL,
-			// this seems to be closest in meaning.
-			return null;
-		} else {
-			try {
-				$dt = new DateTime($this->fechanac);
-			} catch (Exception $x) {
-				throw new PropelException("Internally stored date/time/timestamp value could not be converted to DateTime: " . var_export($this->fechanac, true), $x);
-			}
-		}
-
-		if ($format === null) {
-			// Because propel.useDateTimeClass is TRUE, we return a DateTime object.
-			return $dt;
-		} elseif (strpos($format, '%') !== false) {
-			return strftime($format, $dt->format('U'));
-		} else {
-			return $dt->format($format);
-		}
+		return $this->fechanac;
 	}
 
 	/**
@@ -333,23 +305,21 @@ abstract class BaseEmpleado extends BaseObject  implements Persistent
 	} // setDireccion()
 
 	/**
-	 * Sets the value of [fechanac] column to a normalized version of the date/time value specified.
+	 * Set the value of [fechanac] column.
 	 * 
-	 * @param      mixed $v string, integer (timestamp), or DateTime value.
-	 *               Empty strings are treated as NULL.
+	 * @param      string $v new value
 	 * @return     Empleado The current object (for fluent API support)
 	 */
 	public function setFechanac($v)
 	{
-		$dt = PropelDateTime::newInstance($v, null, 'DateTime');
-		if ($this->fechanac !== null || $dt !== null) {
-			$currentDateAsString = ($this->fechanac !== null && $tmpDt = new DateTime($this->fechanac)) ? $tmpDt->format('Y-m-d') : null;
-			$newDateAsString = $dt ? $dt->format('Y-m-d') : null;
-			if ($currentDateAsString !== $newDateAsString) {
-				$this->fechanac = $newDateAsString;
-				$this->modifiedColumns[] = EmpleadoPeer::FECHANAC;
-			}
-		} // if either are not null
+		if ($v !== null) {
+			$v = (string) $v;
+		}
+
+		if ($this->fechanac !== $v) {
+			$this->fechanac = $v;
+			$this->modifiedColumns[] = EmpleadoPeer::FECHANAC;
+		}
 
 		return $this;
 	} // setFechanac()
@@ -718,10 +688,6 @@ abstract class BaseEmpleado extends BaseObject  implements Persistent
 		$modifiedColumns = array();
 		$index = 0;
 
-		$this->modifiedColumns[] = EmpleadoPeer::IDEMPLEADO;
-		if (null !== $this->idempleado) {
-			throw new PropelException('Cannot insert a value for auto-increment primary key (' . EmpleadoPeer::IDEMPLEADO . ')');
-		}
 
 		 // check the columns in natural order for more readable SQL queries
 		if ($this->isColumnModified(EmpleadoPeer::IDEMPLEADO)) {
@@ -765,34 +731,34 @@ abstract class BaseEmpleado extends BaseObject  implements Persistent
 			$stmt = $con->prepare($sql);
 			foreach ($modifiedColumns as $identifier => $columnName) {
 				switch ($columnName) {
-					case '`IDEMPLEADO`':
+					case '`IDEMPLEADO`':						
 						$stmt->bindValue($identifier, $this->idempleado, PDO::PARAM_INT);
 						break;
-					case '`NOMBRE`':
+					case '`NOMBRE`':						
 						$stmt->bindValue($identifier, $this->nombre, PDO::PARAM_STR);
 						break;
-					case '`APELLIDO`':
+					case '`APELLIDO`':						
 						$stmt->bindValue($identifier, $this->apellido, PDO::PARAM_STR);
 						break;
-					case '`DNI`':
+					case '`DNI`':						
 						$stmt->bindValue($identifier, $this->dni, PDO::PARAM_STR);
 						break;
-					case '`DIRECCION`':
+					case '`DIRECCION`':						
 						$stmt->bindValue($identifier, $this->direccion, PDO::PARAM_STR);
 						break;
-					case '`FECHANAC`':
+					case '`FECHANAC`':						
 						$stmt->bindValue($identifier, $this->fechanac, PDO::PARAM_STR);
 						break;
-					case '`TELCEL`':
+					case '`TELCEL`':						
 						$stmt->bindValue($identifier, $this->telcel, PDO::PARAM_STR);
 						break;
-					case '`USUARIO`':
+					case '`USUARIO`':						
 						$stmt->bindValue($identifier, $this->usuario, PDO::PARAM_STR);
 						break;
-					case '`PASSWORD`':
+					case '`PASSWORD`':						
 						$stmt->bindValue($identifier, $this->password, PDO::PARAM_STR);
 						break;
-					case '`EMAIL`':
+					case '`EMAIL`':						
 						$stmt->bindValue($identifier, $this->email, PDO::PARAM_STR);
 						break;
 				}
@@ -802,13 +768,6 @@ abstract class BaseEmpleado extends BaseObject  implements Persistent
 			Propel::log($e->getMessage(), Propel::LOG_ERR);
 			throw new PropelException(sprintf('Unable to execute INSERT statement [%s]', $sql), $e);
 		}
-
-		try {
-			$pk = $con->lastInsertId();
-		} catch (Exception $e) {
-			throw new PropelException('Unable to get autoincrement id.', $e);
-		}
-		$this->setIdempleado($pk);
 
 		$this->setNew(false);
 	}

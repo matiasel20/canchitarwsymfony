@@ -631,19 +631,19 @@ abstract class BaseCompra extends BaseObject  implements Persistent
 			$stmt = $con->prepare($sql);
 			foreach ($modifiedColumns as $identifier => $columnName) {
 				switch ($columnName) {
-					case '`IDCOMPRA`':
+					case '`IDCOMPRA`':						
 						$stmt->bindValue($identifier, $this->idcompra, PDO::PARAM_INT);
 						break;
-					case '`CANTIDAD`':
+					case '`CANTIDAD`':						
 						$stmt->bindValue($identifier, $this->cantidad, PDO::PARAM_INT);
 						break;
-					case '`FECHA`':
+					case '`FECHA`':						
 						$stmt->bindValue($identifier, $this->fecha, PDO::PARAM_STR);
 						break;
-					case '`CLIENTEID`':
+					case '`CLIENTEID`':						
 						$stmt->bindValue($identifier, $this->clienteid, PDO::PARAM_INT);
 						break;
-					case '`PRODUCTOID`':
+					case '`PRODUCTOID`':						
 						$stmt->bindValue($identifier, $this->productoid, PDO::PARAM_INT);
 						break;
 				}

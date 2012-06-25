@@ -445,10 +445,10 @@ abstract class BaseCategoria extends BaseObject  implements Persistent
 			$stmt = $con->prepare($sql);
 			foreach ($modifiedColumns as $identifier => $columnName) {
 				switch ($columnName) {
-					case '`IDCATEGORIA`':
+					case '`IDCATEGORIA`':						
 						$stmt->bindValue($identifier, $this->idcategoria, PDO::PARAM_INT);
 						break;
-					case '`NOMBRE`':
+					case '`NOMBRE`':						
 						$stmt->bindValue($identifier, $this->nombre, PDO::PARAM_STR);
 						break;
 				}
@@ -1039,11 +1039,11 @@ abstract class BaseCategoria extends BaseObject  implements Persistent
 	/**
 	 * Return the string representation of this object
 	 *
-	 * @return string
+	 * @return string The value of the 'nombre' column
 	 */
 	public function __toString()
 	{
-		return (string) $this->exportTo(CategoriaPeer::DEFAULT_STRING_FORMAT);
+		return (string) $this->getNombre();
 	}
 
 	/**

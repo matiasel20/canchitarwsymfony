@@ -67,7 +67,8 @@ class modifUserActions extends sfActions
     {
       $Cliente = $form->save();
 
-      $this->redirect('modifUser/edit?idcliente='.$Cliente->getIdcliente());
+      //$this->redirect('modifUser/edit?idcliente='.$Cliente->getIdcliente());
+      $this->redirect('administracion/index');
     }
   }
 }

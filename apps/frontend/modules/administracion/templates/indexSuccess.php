@@ -112,16 +112,14 @@
         <?php foreach($alquileres as $alquiler):?>
         <tr>
             <td><?php echo $alquiler->getIdalquiler();?></td>
-          <?php $i = $alquiler->getIdalquiler() ?>
+            <?php $idA = $alquiler->getIdalquiler() ?>
             <td><?php echo $alquiler->getCancha()?></td>
             <td><?php echo $alquiler->getFecha()?></td>
             <td><?php echo $alquiler->getIndumentaria()?></td>
             <td><?php echo $alquiler->getDuchas()?></td>
             <td><?php echo $alquiler->getConfiteria()?></td>          
             <td><?php echo $alquiler->getCliente()->getUser()?></td>
-          <td>
-              <a href="funciones/abmAlquileres/borraA.php?idX=<?php echo $alquiler->getIdalquiler()?>">Cancelar</a>
-          </td>          
+              <td><a href="<?php echo url_for('administracion/cancelar').'?idA='.$idA?>">Cancelar</a></td>     
         </tr>
         <?php endforeach;?>
         </table>

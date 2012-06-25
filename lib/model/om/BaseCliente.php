@@ -930,40 +930,40 @@ abstract class BaseCliente extends BaseObject  implements Persistent
 			$stmt = $con->prepare($sql);
 			foreach ($modifiedColumns as $identifier => $columnName) {
 				switch ($columnName) {
-					case '`IDCLIENTE`':
+					case '`IDCLIENTE`':						
 						$stmt->bindValue($identifier, $this->idcliente, PDO::PARAM_INT);
 						break;
-					case '`USER`':
+					case '`USER`':						
 						$stmt->bindValue($identifier, $this->user, PDO::PARAM_STR);
 						break;
-					case '`NOMBRE`':
+					case '`NOMBRE`':						
 						$stmt->bindValue($identifier, $this->nombre, PDO::PARAM_STR);
 						break;
-					case '`APELLIDO`':
+					case '`APELLIDO`':						
 						$stmt->bindValue($identifier, $this->apellido, PDO::PARAM_STR);
 						break;
-					case '`DNI`':
+					case '`DNI`':						
 						$stmt->bindValue($identifier, $this->dni, PDO::PARAM_STR);
 						break;
-					case '`FECHANAC`':
+					case '`FECHANAC`':						
 						$stmt->bindValue($identifier, $this->fechanac, PDO::PARAM_STR);
 						break;
-					case '`DIRECCION`':
+					case '`DIRECCION`':						
 						$stmt->bindValue($identifier, $this->direccion, PDO::PARAM_STR);
 						break;
-					case '`LOCALIDAD`':
+					case '`LOCALIDAD`':						
 						$stmt->bindValue($identifier, $this->localidad, PDO::PARAM_STR);
 						break;
-					case '`TELCEL`':
+					case '`TELCEL`':						
 						$stmt->bindValue($identifier, $this->telcel, PDO::PARAM_STR);
 						break;
-					case '`EMAIL`':
+					case '`EMAIL`':						
 						$stmt->bindValue($identifier, $this->email, PDO::PARAM_STR);
 						break;
-					case '`PASSWORD`':
+					case '`PASSWORD`':						
 						$stmt->bindValue($identifier, $this->password, PDO::PARAM_STR);
 						break;
-					case '`EQUIPOID`':
+					case '`EQUIPOID`':						
 						$stmt->bindValue($identifier, $this->equipoid, PDO::PARAM_INT);
 						break;
 				}

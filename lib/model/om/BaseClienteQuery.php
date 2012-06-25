@@ -166,7 +166,7 @@ abstract class BaseClienteQuery extends ModelCriteria
 	{
 		$sql = 'SELECT `IDCLIENTE`, `USER`, `NOMBRE`, `APELLIDO`, `DNI`, `FECHANAC`, `DIRECCION`, `LOCALIDAD`, `TELCEL`, `EMAIL`, `PASSWORD`, `EQUIPOID` FROM `cliente` WHERE `IDCLIENTE` = :p0';
 		try {
-			$stmt = $con->prepare($sql);
+			$stmt = $con->prepare($sql);			
 			$stmt->bindValue(':p0', $key, PDO::PARAM_INT);
 			$stmt->execute();
 		} catch (Exception $e) {

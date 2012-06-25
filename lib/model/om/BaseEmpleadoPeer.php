@@ -546,10 +546,6 @@ abstract class BaseEmpleadoPeer {
 			$criteria = $values->buildCriteria(); // build Criteria from Empleado object
 		}
 
-		if ($criteria->containsKey(EmpleadoPeer::IDEMPLEADO) && $criteria->keyContainsValue(EmpleadoPeer::IDEMPLEADO) ) {
-			throw new PropelException('Cannot insert a value for auto-increment primary key ('.EmpleadoPeer::IDEMPLEADO.')');
-		}
-
 
 		// Set the correct dbName
 		$criteria->setDbName(self::DATABASE_NAME);

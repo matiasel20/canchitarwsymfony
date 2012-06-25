@@ -2,3 +2,6 @@ propel:
   _attributes:
     package: lib.model
     defaultIdMethod: native
+
+  categoria:
+    nombre: { primaryString: true }

@@ -1,3 +1,5 @@
-<h1>New Cliente</h1>
-
+<div style="text-align: left; color: white">
+<h2 style="text-align:left">Nuevo Usuario</h2>
+</br>
 <?php include_partial('form', array('form' => $form)) ?>
+</div>

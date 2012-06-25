@@ -595,19 +595,19 @@ abstract class BaseTorneo extends BaseObject  implements Persistent
 			$stmt = $con->prepare($sql);
 			foreach ($modifiedColumns as $identifier => $columnName) {
 				switch ($columnName) {
-					case '`IDTORNEO`':
+					case '`IDTORNEO`':						
 						$stmt->bindValue($identifier, $this->idtorneo, PDO::PARAM_INT);
 						break;
-					case '`TEMPORADA`':
+					case '`TEMPORADA`':						
 						$stmt->bindValue($identifier, $this->temporada, PDO::PARAM_STR);
 						break;
-					case '`TORNEO`':
+					case '`TORNEO`':						
 						$stmt->bindValue($identifier, $this->torneo, PDO::PARAM_STR);
 						break;
-					case '`CAMPEON`':
+					case '`CAMPEON`':						
 						$stmt->bindValue($identifier, $this->campeon, PDO::PARAM_STR);
 						break;
-					case '`SUBCAMPEON`':
+					case '`SUBCAMPEON`':						
 						$stmt->bindValue($identifier, $this->subcampeon, PDO::PARAM_STR);
 						break;
 				}

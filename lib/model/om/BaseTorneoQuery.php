@@ -130,7 +130,7 @@ abstract class BaseTorneoQuery extends ModelCriteria
 	{
 		$sql = 'SELECT `IDTORNEO`, `TEMPORADA`, `TORNEO`, `CAMPEON`, `SUBCAMPEON` FROM `torneo` WHERE `IDTORNEO` = :p0';
 		try {
-			$stmt = $con->prepare($sql);
+			$stmt = $con->prepare($sql);			
 			$stmt->bindValue(':p0', $key, PDO::PARAM_INT);
 			$stmt->execute();
 		} catch (Exception $e) {

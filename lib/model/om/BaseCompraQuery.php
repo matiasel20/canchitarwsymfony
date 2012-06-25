@@ -134,7 +134,7 @@ abstract class BaseCompraQuery extends ModelCriteria
 	{
 		$sql = 'SELECT `IDCOMPRA`, `CANTIDAD`, `FECHA`, `CLIENTEID`, `PRODUCTOID` FROM `compra` WHERE `IDCOMPRA` = :p0';
 		try {
-			$stmt = $con->prepare($sql);
+			$stmt = $con->prepare($sql);			
 			$stmt->bindValue(':p0', $key, PDO::PARAM_INT);
 			$stmt->execute();
 		} catch (Exception $e) {

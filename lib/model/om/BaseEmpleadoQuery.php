@@ -146,7 +146,7 @@ abstract class BaseEmpleadoQuery extends ModelCriteria
 	{
 		$sql = 'SELECT `IDEMPLEADO`, `NOMBRE`, `APELLIDO`, `DNI`, `DIRECCION`, `FECHANAC`, `TELCEL`, `USUARIO`, `PASSWORD`, `EMAIL` FROM `empleado` WHERE `IDEMPLEADO` = :p0';
 		try {
-			$stmt = $con->prepare($sql);
+			$stmt = $con->prepare($sql);			
 			$stmt->bindValue(':p0', $key, PDO::PARAM_INT);
 			$stmt->execute();
 		} catch (Exception $e) {
@@ -372,38 +372,24 @@ abstract class BaseEmpleadoQuery extends ModelCriteria
 	 *
 	 * Example usage:
 	 * <code>
-	 * $query->filterByFechanac('2011-03-14'); // WHERE fechanac = '2011-03-14'
-	 * $query->filterByFechanac('now'); // WHERE fechanac = '2011-03-14'
-	 * $query->filterByFechanac(array('max' => 'yesterday')); // WHERE fechanac > '2011-03-13'
+	 * $query->filterByFechanac('fooValue');   // WHERE fechanac = 'fooValue'
+	 * $query->filterByFechanac('%fooValue%'); // WHERE fechanac LIKE '%fooValue%'
 	 * </code>
 	 *
-	 * @param     mixed $fechanac The value to use as filter.
-	 *              Values can be integers (unix timestamps), DateTime objects, or strings.
-	 *              Empty strings are treated as NULL.
-	 *              Use scalar values for equality.
-	 *              Use array values for in_array() equivalent.
-	 *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
+	 * @param     string $fechanac The value to use as filter.
+	 *              Accepts wildcards (* and % trigger a LIKE)
 	 * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
 	 *
 	 * @return    EmpleadoQuery The current query, for fluid interface
 	 */
 	public function filterByFechanac($fechanac = null, $comparison = null)
 	{
-		if (is_array($fechanac)) {
-			$useMinMax = false;
-			if (isset($fechanac['min'])) {
-				$this->addUsingAlias(EmpleadoPeer::FECHANAC, $fechanac['min'], Criteria::GREATER_EQUAL);
-				$useMinMax = true;
-			}
-			if (isset($fechanac['max'])) {
-				$this->addUsingAlias(EmpleadoPeer::FECHANAC, $fechanac['max'], Criteria::LESS_EQUAL);
-				$useMinMax = true;
-			}
-			if ($useMinMax) {
-				return $this;
-			}
-			if (null === $comparison) {
+		if (null === $comparison) {
+			if (is_array($fechanac)) {
 				$comparison = Criteria::IN;
+			} elseif (preg_match('/[\%\*]/', $fechanac)) {
+				$fechanac = str_replace('*', '%', $fechanac);
+				$comparison = Criteria::LIKE;
 			}
 		}
 		return $this->addUsingAlias(EmpleadoPeer::FECHANAC, $fechanac, $comparison);
