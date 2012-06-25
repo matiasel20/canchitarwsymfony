@@ -1,6 +1,8 @@
 <?php slot('alquileres', 'Pisado') ?>
 
-<?php echo $alert?>
+<?php if ($sf_user->hasFlash('alerta')): ?>
+<?php echo $alerta_msj = sprintf("<script>alert(\"%s\")</script>",$sf_user->getFlash('alerta'));?>
+<?php endif; ?>
 
 <div id="tabs">
 		
@@ -21,7 +23,7 @@
     <label style="color:yellow;margin-left:8em"><?php echo $dia[$i]." ".$fecha[$i];?></label>
     <table class="alq">
     
-    <form name="formulario" method="post" action="LogIn.html">
+    <form name="formulario" method="post" action="<?php echo url_for('alquileres/reservar')?>" >
         
     <input type="hidden" value="<?php echo $c ?>" name="cancha"/>
     <input type="hidden" value="<?php echo $fecha[$i] ?>" name="fecha"/>
@@ -31,8 +33,8 @@
       <td class="alq">
       <fieldset>
         <label class= "option" for="localidad" style="font-size:23px">Horario:</br></br></label>
-        <select name="horarios" class="required">
-          <?php foreach($horario[$c][$i] as $hora):?>                                          
+        <select name="hora" class="required">
+          <?php foreach($horarios_disponibles[$c][$i] as $hora):?>                                          
           <option value='<?php echo $hora?>'> <?php echo $hora.':00 hs'?> </option>                                              
           <?php endforeach;?>
        </select>

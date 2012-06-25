@@ -43,6 +43,8 @@ all:
     default_culture:        en
     i18n:                   true
     
+    login_module: login
+    login_action: index
     # Uncomment if you will use sfGuardPlugin
     #login_module:           sfGuardAuth
     #login_action:           signin

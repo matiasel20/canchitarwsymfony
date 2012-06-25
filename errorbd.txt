@@ -1,0 +1,240 @@
+>> propel    Running "reverse" phing task
+
+Warning: simplexml_load_file(): encoder errorC:/xampp/htdocs/canchitarwsymfony/config/schema.xml:1550: parser error : AttValue: ' expected in C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\addon\sfPropelDatabaseSchema.class.php on line 1019
+
+Call Stack:
+    0.0006     324656   1. {main}() C:\xampp\htdocs\canchitarwsymfony\symfony:0
+    0.0059     585056   2. include('C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\command\cli.php') C:\xampp\htdocs\canchitarwsymfony\symfony:14
+    0.6927    9383440   3. sfSymfonyCommandApplication->run() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\command\cli.php:20
+    0.6963    9384616   4. sfTask->runFromCLI() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\command\sfSymfonyCommandApplication.class.php:76
+    0.6964    9384912   5. sfBaseTask->doRun() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\task\sfTask.class.php:97
+    0.7435   10024112   6. sfPropelBuildSchemaTask->execute() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\task\sfBaseTask.class.php:68
+    0.7529   10186672   7. sfPropelBuildSchemaTask->reverseDatabase() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\task\sfPropelBuildSchemaTask.class.php:67
+    2.0144   23500712   8. sfPropelBaseTask->schemaToYML() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\task\sfPropelBuildSchemaTask.class.php:98
+    2.0422   23835216   9. sfPropelDatabaseSchema->loadXML() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\task\sfPropelBaseTask.class.php:67
+    2.0422   23835248  10. simplexml_load_file() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\addon\sfPropelDatabaseSchema.class.php:1019
+
+
+Warning: simplexml_load_file():     <column name="a in C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\addon\sfPropelDatabaseSchema.class.php on line 1019
+
+Call Stack:
+    0.0006     324656   1. {main}() C:\xampp\htdocs\canchitarwsymfony\symfony:0
+    0.0059     585056   2. include('C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\command\cli.php') C:\xampp\htdocs\canchitarwsymfony\symfony:14
+    0.6927    9383440   3. sfSymfonyCommandApplication->run() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\command\cli.php:20
+    0.6963    9384616   4. sfTask->runFromCLI() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\command\sfSymfonyCommandApplication.class.php:76
+    0.6964    9384912   5. sfBaseTask->doRun() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\task\sfTask.class.php:97
+    0.7435   10024112   6. sfPropelBuildSchemaTask->execute() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\task\sfBaseTask.class.php:68
+    0.7529   10186672   7. sfPropelBuildSchemaTask->reverseDatabase() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\task\sfPropelBuildSchemaTask.class.php:67
+    2.0144   23500712   8. sfPropelBaseTask->schemaToYML() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\task\sfPropelBuildSchemaTask.class.php:98
+    2.0422   23835216   9. sfPropelDatabaseSchema->loadXML() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\task\sfPropelBaseTask.class.php:67
+    2.0422   23835248  10. simplexml_load_file() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\addon\sfPropelDatabaseSchema.class.php:1019
+
+
+Warning: simplexml_load_file():                    ^ in C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\addon\sfPropelDatabaseSchema.class.php on line 1019
+
+Call Stack:
+    0.0006     324656   1. {main}() C:\xampp\htdocs\canchitarwsymfony\symfony:0
+    0.0059     585056   2. include('C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\command\cli.php') C:\xampp\htdocs\canchitarwsymfony\symfony:14
+    0.6927    9383440   3. sfSymfonyCommandApplication->run() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\command\cli.php:20
+    0.6963    9384616   4. sfTask->runFromCLI() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\command\sfSymfonyCommandApplication.class.php:76
+    0.6964    9384912   5. sfBaseTask->doRun() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\task\sfTask.class.php:97
+    0.7435   10024112   6. sfPropelBuildSchemaTask->execute() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\task\sfBaseTask.class.php:68
+    0.7529   10186672   7. sfPropelBuildSchemaTask->reverseDatabase() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\task\sfPropelBuildSchemaTask.class.php:67
+    2.0144   23500712   8. sfPropelBaseTask->schemaToYML() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\task\sfPropelBuildSchemaTask.class.php:98
+    2.0422   23835216   9. sfPropelDatabaseSchema->loadXML() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\task\sfPropelBaseTask.class.php:67
+    2.0422   23835248  10. simplexml_load_file() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\addon\sfPropelDatabaseSchema.class.php:1019
+
+
+Warning: simplexml_load_file(): C:/xampp/htdocs/canchitarwsymfony/config/schema.xml:1550: parser error : attributes construct error in C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\addon\sfPropelDatabaseSchema.class.php on line 1019
+
+Call Stack:
+    0.0006     324656   1. {main}() C:\xampp\htdocs\canchitarwsymfony\symfony:0
+    0.0059     585056   2. include('C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\command\cli.php') C:\xampp\htdocs\canchitarwsymfony\symfony:14
+    0.6927    9383440   3. sfSymfonyCommandApplication->run() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\command\cli.php:20
+    0.6963    9384616   4. sfTask->runFromCLI() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\command\sfSymfonyCommandApplication.class.php:76
+    0.6964    9384912   5. sfBaseTask->doRun() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\task\sfTask.class.php:97
+    0.7435   10024112   6. sfPropelBuildSchemaTask->execute() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\task\sfBaseTask.class.php:68
+    0.7529   10186672   7. sfPropelBuildSchemaTask->reverseDatabase() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\task\sfPropelBuildSchemaTask.class.php:67
+    2.0144   23500712   8. sfPropelBaseTask->schemaToYML() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\task\sfPropelBuildSchemaTask.class.php:98
+    2.0422   23835216   9. sfPropelDatabaseSchema->loadXML() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\task\sfPropelBaseTask.class.php:67
+    2.0422   23835248  10. simplexml_load_file() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\addon\sfPropelDatabaseSchema.class.php:1019
+
+
+Warning: simplexml_load_file():     <column name="a in C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\addon\sfPropelDatabaseSchema.class.php on line 1019
+
+Call Stack:
+    0.0006     324656   1. {main}() C:\xampp\htdocs\canchitarwsymfony\symfony:0
+    0.0059     585056   2. include('C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\command\cli.php') C:\xampp\htdocs\canchitarwsymfony\symfony:14
+    0.6927    9383440   3. sfSymfonyCommandApplication->run() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\command\cli.php:20
+    0.6963    9384616   4. sfTask->runFromCLI() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\command\sfSymfonyCommandApplication.class.php:76
+    0.6964    9384912   5. sfBaseTask->doRun() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\task\sfTask.class.php:97
+    0.7435   10024112   6. sfPropelBuildSchemaTask->execute() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\task\sfBaseTask.class.php:68
+    0.7529   10186672   7. sfPropelBuildSchemaTask->reverseDatabase() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\task\sfPropelBuildSchemaTask.class.php:67
+    2.0144   23500712   8. sfPropelBaseTask->schemaToYML() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\task\sfPropelBuildSchemaTask.class.php:98
+    2.0422   23835216   9. sfPropelDatabaseSchema->loadXML() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\task\sfPropelBaseTask.class.php:67
+    2.0422   23835248  10. simplexml_load_file() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\addon\sfPropelDatabaseSchema.class.php:1019
+
+
+Warning: simplexml_load_file():                    ^ in C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\addon\sfPropelDatabaseSchema.class.php on line 1019
+
+Call Stack:
+    0.0006     324656   1. {main}() C:\xampp\htdocs\canchitarwsymfony\symfony:0
+    0.0059     585056   2. include('C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\command\cli.php') C:\xampp\htdocs\canchitarwsymfony\symfony:14
+    0.6927    9383440   3. sfSymfonyCommandApplication->run() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\command\cli.php:20
+    0.6963    9384616   4. sfTask->runFromCLI() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\command\sfSymfonyCommandApplication.class.php:76
+    0.6964    9384912   5. sfBaseTask->doRun() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\task\sfTask.class.php:97
+    0.7435   10024112   6. sfPropelBuildSchemaTask->execute() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\task\sfBaseTask.class.php:68
+    0.7529   10186672   7. sfPropelBuildSchemaTask->reverseDatabase() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\task\sfPropelBuildSchemaTask.class.php:67
+    2.0144   23500712   8. sfPropelBaseTask->schemaToYML() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\task\sfPropelBuildSchemaTask.class.php:98
+    2.0422   23835216   9. sfPropelDatabaseSchema->loadXML() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\task\sfPropelBaseTask.class.php:67
+    2.0422   23835248  10. simplexml_load_file() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\addon\sfPropelDatabaseSchema.class.php:1019
+
+
+Warning: simplexml_load_file(): C:/xampp/htdocs/canchitarwsymfony/config/schema.xml:1550: parser error : Couldn't find end of Start Tag column line 1550 in C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\addon\sfPropelDatabaseSchema.class.php on line 1019
+
+Call Stack:
+    0.0006     324656   1. {main}() C:\xampp\htdocs\canchitarwsymfony\symfony:0
+    0.0059     585056   2. include('C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\command\cli.php') C:\xampp\htdocs\canchitarwsymfony\symfony:14
+    0.6927    9383440   3. sfSymfonyCommandApplication->run() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\command\cli.php:20
+    0.6963    9384616   4. sfTask->runFromCLI() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\command\sfSymfonyCommandApplication.class.php:76
+    0.6964    9384912   5. sfBaseTask->doRun() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\task\sfTask.class.php:97
+    0.7435   10024112   6. sfPropelBuildSchemaTask->execute() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\task\sfBaseTask.class.php:68
+    0.7529   10186672   7. sfPropelBuildSchemaTask->reverseDatabase() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\task\sfPropelBuildSchemaTask.class.php:67
+    2.0144   23500712   8. sfPropelBaseTask->schemaToYML() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\task\sfPropelBuildSchemaTask.class.php:98
+    2.0422   23835216   9. sfPropelDatabaseSchema->loadXML() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\task\sfPropelBaseTask.class.php:67
+    2.0422   23835248  10. simplexml_load_file() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\addon\sfPropelDatabaseSchema.class.php:1019
+
+
+Warning: simplexml_load_file():     <column name="a in C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\addon\sfPropelDatabaseSchema.class.php on line 1019
+
+Call Stack:
+    0.0006     324656   1. {main}() C:\xampp\htdocs\canchitarwsymfony\symfony:0
+    0.0059     585056   2. include('C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\command\cli.php') C:\xampp\htdocs\canchitarwsymfony\symfony:14
+    0.6927    9383440   3. sfSymfonyCommandApplication->run() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\command\cli.php:20
+    0.6963    9384616   4. sfTask->runFromCLI() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\command\sfSymfonyCommandApplication.class.php:76
+    0.6964    9384912   5. sfBaseTask->doRun() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\task\sfTask.class.php:97
+    0.7435   10024112   6. sfPropelBuildSchemaTask->execute() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\task\sfBaseTask.class.php:68
+    0.7529   10186672   7. sfPropelBuildSchemaTask->reverseDatabase() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\task\sfPropelBuildSchemaTask.class.php:67
+    2.0144   23500712   8. sfPropelBaseTask->schemaToYML() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\task\sfPropelBuildSchemaTask.class.php:98
+    2.0422   23835216   9. sfPropelDatabaseSchema->loadXML() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\task\sfPropelBaseTask.class.php:67
+    2.0422   23835248  10. simplexml_load_file() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\addon\sfPropelDatabaseSchema.class.php:1019
+
+
+Warning: simplexml_load_file():                    ^ in C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\addon\sfPropelDatabaseSchema.class.php on line 1019
+
+Call Stack:
+    0.0006     324656   1. {main}() C:\xampp\htdocs\canchitarwsymfony\symfony:0
+    0.0059     585056   2. include('C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\command\cli.php') C:\xampp\htdocs\canchitarwsymfony\symfony:14
+    0.6927    9383440   3. sfSymfonyCommandApplication->run() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\command\cli.php:20
+    0.6963    9384616   4. sfTask->runFromCLI() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\command\sfSymfonyCommandApplication.class.php:76
+    0.6964    9384912   5. sfBaseTask->doRun() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\task\sfTask.class.php:97
+    0.7435   10024112   6. sfPropelBuildSchemaTask->execute() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\task\sfBaseTask.class.php:68
+    0.7529   10186672   7. sfPropelBuildSchemaTask->reverseDatabase() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\task\sfPropelBuildSchemaTask.class.php:67
+    2.0144   23500712   8. sfPropelBaseTask->schemaToYML() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\task\sfPropelBuildSchemaTask.class.php:98
+    2.0422   23835216   9. sfPropelDatabaseSchema->loadXML() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\task\sfPropelBaseTask.class.php:67
+    2.0422   23835248  10. simplexml_load_file() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\addon\sfPropelDatabaseSchema.class.php:1019
+
+
+Warning: simplexml_load_file(): C:/xampp/htdocs/canchitarwsymfony/config/schema.xml:1550: parser error : Premature end of data in tag table line 1539 in C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\addon\sfPropelDatabaseSchema.class.php on line 1019
+
+Call Stack:
+    0.0006     324656   1. {main}() C:\xampp\htdocs\canchitarwsymfony\symfony:0
+    0.0059     585056   2. include('C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\command\cli.php') C:\xampp\htdocs\canchitarwsymfony\symfony:14
+    0.6927    9383440   3. sfSymfonyCommandApplication->run() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\command\cli.php:20
+    0.6963    9384616   4. sfTask->runFromCLI() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\command\sfSymfonyCommandApplication.class.php:76
+    0.6964    9384912   5. sfBaseTask->doRun() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\task\sfTask.class.php:97
+    0.7435   10024112   6. sfPropelBuildSchemaTask->execute() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\task\sfBaseTask.class.php:68
+    0.7529   10186672   7. sfPropelBuildSchemaTask->reverseDatabase() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\task\sfPropelBuildSchemaTask.class.php:67
+    2.0144   23500712   8. sfPropelBaseTask->schemaToYML() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\task\sfPropelBuildSchemaTask.class.php:98
+    2.0422   23835216   9. sfPropelDatabaseSchema->loadXML() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\task\sfPropelBaseTask.class.php:67
+    2.0422   23835248  10. simplexml_load_file() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\addon\sfPropelDatabaseSchema.class.php:1019
+
+
+Warning: simplexml_load_file():     <column name="a in C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\addon\sfPropelDatabaseSchema.class.php on line 1019
+
+Call Stack:
+    0.0006     324656   1. {main}() C:\xampp\htdocs\canchitarwsymfony\symfony:0
+    0.0059     585056   2. include('C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\command\cli.php') C:\xampp\htdocs\canchitarwsymfony\symfony:14
+    0.6927    9383440   3. sfSymfonyCommandApplication->run() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\command\cli.php:20
+    0.6963    9384616   4. sfTask->runFromCLI() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\command\sfSymfonyCommandApplication.class.php:76
+    0.6964    9384912   5. sfBaseTask->doRun() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\task\sfTask.class.php:97
+    0.7435   10024112   6. sfPropelBuildSchemaTask->execute() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\task\sfBaseTask.class.php:68
+    0.7529   10186672   7. sfPropelBuildSchemaTask->reverseDatabase() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\task\sfPropelBuildSchemaTask.class.php:67
+    2.0144   23500712   8. sfPropelBaseTask->schemaToYML() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\task\sfPropelBuildSchemaTask.class.php:98
+    2.0422   23835216   9. sfPropelDatabaseSchema->loadXML() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\task\sfPropelBaseTask.class.php:67
+    2.0422   23835248  10. simplexml_load_file() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\addon\sfPropelDatabaseSchema.class.php:1019
+
+
+Warning: simplexml_load_file():                    ^ in C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\addon\sfPropelDatabaseSchema.class.php on line 1019
+
+Call Stack:
+    0.0006     324656   1. {main}() C:\xampp\htdocs\canchitarwsymfony\symfony:0
+    0.0059     585056   2. include('C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\command\cli.php') C:\xampp\htdocs\canchitarwsymfony\symfony:14
+    0.6927    9383440   3. sfSymfonyCommandApplication->run() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\command\cli.php:20
+    0.6963    9384616   4. sfTask->runFromCLI() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\command\sfSymfonyCommandApplication.class.php:76
+    0.6964    9384912   5. sfBaseTask->doRun() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\task\sfTask.class.php:97
+    0.7435   10024112   6. sfPropelBuildSchemaTask->execute() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\task\sfBaseTask.class.php:68
+    0.7529   10186672   7. sfPropelBuildSchemaTask->reverseDatabase() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\task\sfPropelBuildSchemaTask.class.php:67
+    2.0144   23500712   8. sfPropelBaseTask->schemaToYML() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\task\sfPropelBuildSchemaTask.class.php:98
+    2.0422   23835216   9. sfPropelDatabaseSchema->loadXML() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\task\sfPropelBaseTask.class.php:67
+    2.0422   23835248  10. simplexml_load_file() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\addon\sfPropelDatabaseSchema.class.php:1019
+
+
+Warning: simplexml_load_file(): C:/xampp/htdocs/canchitarwsymfony/config/schema.xml:1550: parser error : Premature end of data in tag database line 3 in C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\addon\sfPropelDatabaseSchema.class.php on line 1019
+
+Call Stack:
+    0.0006     324656   1. {main}() C:\xampp\htdocs\canchitarwsymfony\symfony:0
+    0.0059     585056   2. include('C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\command\cli.php') C:\xampp\htdocs\canchitarwsymfony\symfony:14
+    0.6927    9383440   3. sfSymfonyCommandApplication->run() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\command\cli.php:20
+    0.6963    9384616   4. sfTask->runFromCLI() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\command\sfSymfonyCommandApplication.class.php:76
+    0.6964    9384912   5. sfBaseTask->doRun() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\task\sfTask.class.php:97
+    0.7435   10024112   6. sfPropelBuildSchemaTask->execute() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\task\sfBaseTask.class.php:68
+    0.7529   10186672   7. sfPropelBuildSchemaTask->reverseDatabase() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\task\sfPropelBuildSchemaTask.class.php:67
+    2.0144   23500712   8. sfPropelBaseTask->schemaToYML() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\task\sfPropelBuildSchemaTask.class.php:98
+    2.0422   23835216   9. sfPropelDatabaseSchema->loadXML() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\task\sfPropelBaseTask.class.php:67
+    2.0422   23835248  10. simplexml_load_file() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\addon\sfPropelDatabaseSchema.class.php:1019
+
+
+Warning: simplexml_load_file():     <column name="a in C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\addon\sfPropelDatabaseSchema.class.php on line 1019
+
+Call Stack:
+    0.0006     324656   1. {main}() C:\xampp\htdocs\canchitarwsymfony\symfony:0
+    0.0059     585056   2. include('C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\command\cli.php') C:\xampp\htdocs\canchitarwsymfony\symfony:14
+    0.6927    9383440   3. sfSymfonyCommandApplication->run() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\command\cli.php:20
+    0.6963    9384616   4. sfTask->runFromCLI() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\command\sfSymfonyCommandApplication.class.php:76
+    0.6964    9384912   5. sfBaseTask->doRun() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\task\sfTask.class.php:97
+    0.7435   10024112   6. sfPropelBuildSchemaTask->execute() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\task\sfBaseTask.class.php:68
+    0.7529   10186672   7. sfPropelBuildSchemaTask->reverseDatabase() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\task\sfPropelBuildSchemaTask.class.php:67
+    2.0144   23500712   8. sfPropelBaseTask->schemaToYML() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\task\sfPropelBuildSchemaTask.class.php:98
+    2.0422   23835216   9. sfPropelDatabaseSchema->loadXML() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\task\sfPropelBaseTask.class.php:67
+    2.0422   23835248  10. simplexml_load_file() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\addon\sfPropelDatabaseSchema.class.php:1019
+
+
+Warning: simplexml_load_file():                    ^ in C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\addon\sfPropelDatabaseSchema.class.php on line 1019
+
+Call Stack:
+    0.0006     324656   1. {main}() C:\xampp\htdocs\canchitarwsymfony\symfony:0
+    0.0059     585056   2. include('C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\command\cli.php') C:\xampp\htdocs\canchitarwsymfony\symfony:14
+    0.6927    9383440   3. sfSymfonyCommandApplication->run() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\command\cli.php:20
+    0.6963    9384616   4. sfTask->runFromCLI() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\command\sfSymfonyCommandApplication.class.php:76
+    0.6964    9384912   5. sfBaseTask->doRun() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\task\sfTask.class.php:97
+    0.7435   10024112   6. sfPropelBuildSchemaTask->execute() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\task\sfBaseTask.class.php:68
+    0.7529   10186672   7. sfPropelBuildSchemaTask->reverseDatabase() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\task\sfPropelBuildSchemaTask.class.php:67
+    2.0144   23500712   8. sfPropelBaseTask->schemaToYML() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\task\sfPropelBuildSchemaTask.class.php:98
+    2.0422   23835216   9. sfPropelDatabaseSchema->loadXML() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\task\sfPropelBaseTask.class.php:67
+    2.0422   23835248  10. simplexml_load_file() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\addon\sfPropelDatabaseSchema.class.php:1019
+
+
+Fatal error: Call to a member function attributes() on a non-object in C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\addon\sfPropelDatabaseSchema.class.php on line 1023
+
+Call Stack:
+    0.0006     324656   1. {main}() C:\xampp\htdocs\canchitarwsymfony\symfony:0
+    0.0059     585056   2. include('C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\command\cli.php') C:\xampp\htdocs\canchitarwsymfony\symfony:14
+    0.6927    9383440   3. sfSymfonyCommandApplication->run() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\command\cli.php:20
+    0.6963    9384616   4. sfTask->runFromCLI() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\command\sfSymfonyCommandApplication.class.php:76
+    0.6964    9384912   5. sfBaseTask->doRun() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\task\sfTask.class.php:97
+    0.7435   10024112   6. sfPropelBuildSchemaTask->execute() C:\xampp\htdocs\canchitarwsymfony\lib\vendor\symfony\lib\task\sfBaseTask.class.php:68
+    0.7529   10186672   7. sfPropelBuildSchemaTask->reverseDatabase() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\task\sfPropelBuildSchemaTask.class.php:67
+    2.0144   23500712   8. sfPropelBaseTask->schemaToYML() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\task\sfPropelBuildSchemaTask.class.php:98
+    2.0422   23835216   9. sfPropelDatabaseSchema->loadXML() C:\xampp\htdocs\canchitarwsymfony\plugins\sfPropelORMPlugin\lib\task\sfPropelBaseTask.class.php:67
+

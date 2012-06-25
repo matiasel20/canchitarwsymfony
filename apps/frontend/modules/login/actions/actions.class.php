@@ -36,6 +36,12 @@ class loginActions extends sfActions
                 $this->getUser()->iniciarSesion($nombre_usuario);
                 return $this->redirect('@homepage');
             }
+            elseif ($this->esLoginCorrectoEmpleado($nombre_usuario,$pass))
+            {
+                $this->getUser()->iniciarSesion($nombre_usuario);
+                $this->getUser()->addCredential('empleado');
+                return $this->redirect('@homepage');
+            }
             else
             {
                 $this->getUser()->setErrorLogin("login incorrecto");
@@ -54,6 +60,8 @@ class loginActions extends sfActions
               
   }
   
+
+  
   public function executeLogout(sfWebRequest $request)
   {
       $this->getUser()->cerrarSesion();
@@ -69,4 +77,14 @@ class loginActions extends sfActions
       
       return !($q->find()->isEmpty());
   }
+  
+  private function esLoginCorrectoEmpleado($usuario,$pass)
+  {
+      $q = EmpleadoQuery::create();
+      $q->filterByUsuario($usuario);
+      $q->filterByPassword($pass);
+      
+      return !($q->find()->isEmpty());
+  }
+  
 }

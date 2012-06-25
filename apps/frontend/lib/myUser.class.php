@@ -25,6 +25,11 @@ class myUser extends sfBasicSecurityUser
     {
         return $this->getAttribute('error_login',"");
     }
+	
+	 public function getUsuario()
+    {
+        return $this->getAttribute('usuario',"");
+    }
     
     public function removerErrorLogin()
     {
