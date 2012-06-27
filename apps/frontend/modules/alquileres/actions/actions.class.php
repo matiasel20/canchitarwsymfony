@@ -18,8 +18,7 @@ class alquileresActions extends sfActions
   public function executeIndex(sfWebRequest $request)
   {
     //seteo mensajes template por defecto
-    $this->msj_sesion="";
-    $this->alert="";
+    $this->msj_sesion="";   
     
     //declaro arreglo con nombre de los dias de la semana
     $nombre_dias = array('lunes','martes','miercoles','jueves','viernes','sabado','domingo');
@@ -31,7 +30,7 @@ class alquileresActions extends sfActions
         3=>"cancha8.jpg"
     );  
 	
-    if (!$this->getUser()->isAuthenticated())
+    if (!$this->getUser()->hasCredential('cliente'))
     {
             $this->msj_sesion="Usuario no identificado";
             $this->dia_limite=0;
@@ -220,14 +219,10 @@ protected function consultoHorarios($dia_limite)
     $q = AlquilerQuery::create();   
     
     $q->select(array('Fecha', 'Cancha'));
+    
+    $q->filterByFecha(array('min' => 'now')); 
             
-    $q->filterByFecha(array('max' => $fecha_fin)); 
-    
-    $q->filterByFecha(array('min' => 'now'));  
-    
-    $q->orderByFecha(Criteria::ASC);
-    
-    $q->orderByCancha(Criteria::ASC);
+    $q->filterByFecha(array('max' => $fecha_fin));  
     
     return $q->find();
     

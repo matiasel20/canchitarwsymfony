@@ -19,10 +19,12 @@ class loginActions extends sfActions
   {
       if ($this->getUser()->isAuthenticated())
           return $this->redirect('@homepage');
-    //$this->forward('default', 'module');
-      
-      
-      
+    //$this->forward('default', 'module');    
+              
+  }
+  
+  public function executeLogin(sfWebRequest $request)
+  {
       if($request->isMethod(sfWebRequest::POST))
       {
           $nombre_usuario = $request->getParameter("usuario");
@@ -34,6 +36,7 @@ class loginActions extends sfActions
             if ($this->esLoginCorrecto($nombre_usuario,$pass))
             {            
                 $this->getUser()->iniciarSesion($nombre_usuario);
+                $this->getUser()->addCredential('cliente');
                 return $this->redirect('@homepage');
             }
             elseif ($this->esLoginCorrectoEmpleado($nombre_usuario,$pass))
@@ -44,23 +47,15 @@ class loginActions extends sfActions
             }
             else
             {
-                $this->getUser()->setErrorLogin("login incorrecto");
-            }
+                $this->getUser()->setFlash('errorlogin', "login incorrecto");            }
                 
           }
           else
-              $this->getUser()->setErrorLogin( "campos incompletos");
-          
+                $this->getUser()->setFlash('errorlogin', "campos incompletos");          
        }
        
-       $this->msj = $this->getUser()->getErrorLogin();
-       $this->getUser()->removerErrorLogin();
-      
-      
-              
+       return $this->redirect('login/index');
   }
-  
-
   
   public function executeLogout(sfWebRequest $request)
   {

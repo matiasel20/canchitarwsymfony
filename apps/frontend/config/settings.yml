@@ -49,5 +49,5 @@ all:
     #login_module:           sfGuardAuth
     #login_action:           signin
 
-    #secure_module:          sfGuardAuth
-    #secure_action:          secure
+    #secure_module:          principal 
+    #secure_action:          index

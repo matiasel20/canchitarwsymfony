@@ -1,0 +1,5 @@
+## YAML Template.
+---
+reservar:
+  is_secure: true
+  credentials: cliente 

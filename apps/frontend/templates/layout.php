@@ -43,22 +43,24 @@
 	<div class="left">
 		<div style="text-align: center">
 			<?php if($sf_user->isAuthenticated()):?>
-				<label sytle="text-align: right"><?php echo $sf_user->getAttribute('usuario')?> <a href="<?php echo url_for('login/logout') ?>" >cerrar sesion</a></label>
-            <?php elseif (isset($_SESSION['empleado'])):?>
-				<label sytle="text-align: right"><?php echo $_SESSION['empleado']?> <a href="funciones/logout.php" >cerrar sesion</a></label>
+				<label sytle="text-align: right"><?php echo $sf_user->getAttribute('usuario')?> <a href="<?php echo url_for('login/logout') ?>" >cerrar sesion</a></label>            
 			<?php endif;?>
         </div> 
 
 		<div class="menu">			
 			<a id="format" class="<?php if (!include_slot('inicio')): ?>link<?php endif; ?>" href="<?php echo url_for('principal/index') ?>">Inicio</a>							
+                        <?php if(!$sf_user->isAuthenticated()):?>
 			<a id="format" class="<?php if (!include_slot('entrar')): ?>link<?php endif; ?>" href="<?php echo url_for('login/index') ?>">Entrar</a>			
+                        <?php endif;?>
 			<a id="format" class="<?php if (!include_slot('registrarse')): ?>link<?php endif; ?>" href="<?php echo url_for('registro/index') ?>">Registrarse</a>						
 			<a id="format" class="<?php if (!include_slot('torneos')): ?>link<?php endif; ?>" href="<?php echo url_for('torneos/index') ?>">Torneos</a>					
 			<a id="format" class="<?php if (!include_slot('compras')): ?>link<?php endif; ?>" href="<?php echo url_for('compras/index') ?>">Compras</a>						
 			<a id="format" class="<?php if (!include_slot('alquileres')): ?>link<?php endif; ?>" href="<?php echo url_for('alquileres/index') ?>">Alquileres</a>						
-			<a id="format" class="<?php if (!include_slot('proveedores')): ?>link<?php endif; ?>" href="<?php echo url_for('proveedores/index') ?>">Proveedores</a>			
+			<a id="format" class="<?php if (!include_slot('proveedores')): ?>link<?php endif; ?>" href="<?php echo url_for('proveedores/index') ?>">Proveedores</a>			                        
+                        <?php if($sf_user->hasCredential('empleado')):?>
 			<a id="format" class="<?php if (!include_slot('administracion')): ?>link<?php endif; ?>" href="<?php echo url_for('administracion/index') ?>">Administracion</a>					
-		</div>
+                        <?php endif;?>
+                </div> 
       
     </div>
 
