@@ -20,7 +20,24 @@ class ClienteForm extends BaseClienteForm
           'fechanac' => 'Fecha de nacimiento',
           'user' => 'Nombre de usuario',
           'telcel' => 'Tel/Cel',
-          'email' => 'E-mail'
+          'email' => 'E-mail',
+          'password' => 'Contraseña',
       ));
+      $this->widgetSchema['password'] = new sfWidgetFormInputPassword();
+      
+      $this->validatorSchema['user']->setOption('min_length', 6);
+      
+      
+      $this->validatorSchema['password'] = new sfValidatorPass();
+      //$this->validatorSchema['password']->setOption('min_length', 6);
+      
+      $this->validatorSchema['email'] = new sfValidatorEmail();
+      
+      $this->validatorSchema->setPostValidator(
+        new sfValidatorAnd(array(
+        new sfValidatorPropelUnique(array('model' => 'Cliente', 'column' => array('email'))),
+        new sfValidatorPropelUnique(array('model' => 'Cliente', 'column' => array('user')))
+        ))
+      );
   }
 }
