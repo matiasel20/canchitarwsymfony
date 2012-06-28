@@ -146,15 +146,15 @@ class alquileresActions extends sfActions
         $alquiler->setDuchas($ducha);
         $alquiler->setConfiteria($confiteria);
         $alquiler->setClienteid($iduser);
+        try {
         $alquiler->save();
-        
+        }  catch (Exception $e){
+            $this->getUser()->setFlash('alerta', "no se pudo realizar la reserva");
+            return $this->redirect('alquileres/index');
+        }
         $this->getUser()->setFlash('alerta', "reserva realizada con exito");
         return $this->redirect('alquileres/index');
-        
-			
-			
-		
-		
+        	
     }
     else        
     {
@@ -162,6 +162,14 @@ class alquileresActions extends sfActions
         return $this->redirect('alquileres/index');
     }
   }
+ }
+ 
+ public function executeMostrar(sfWebRequest $request)
+ {
+     $this->results = AlquilerQuery::create()->findByClienteid($this->id_User($this->getUser()->getUsuario()));
+     
+     return sfView::SUCCESS;
+     
  }
   
   protected function calcularFecha($dias)

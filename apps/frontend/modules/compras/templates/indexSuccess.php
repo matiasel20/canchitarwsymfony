@@ -1,5 +1,6 @@
 <?php slot('compras', 'Pisado') ?>
 <? /* @var $fila Categoria */?>
+
 <div class="contenido1">
 
      <div id="accordion">
@@ -27,9 +28,9 @@
                   <td><?php echo $fila->getPrecio();?></td>
                   <td><?php echo $fila->getStock();?></td>
 
-                  <?php if($sf_user->isAuthenticated()):?>
-                      <td><a href="funciones/compra/alta.php?prod=
-                      <?php echo $fila->getIdproducto();?>"> Comprar </a></td>
+                  <?php if($sf_user->hasCredential('cliente')):?>
+                  <td><a href="<?php echo url_for('compras/comprar').'?prod='.$fila->getIdproducto();?>"> Comprar </a></td>
+                  
                   <?php endif;?>
 
 

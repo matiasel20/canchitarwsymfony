@@ -58,8 +58,12 @@ class modifProdActions extends sfActions
 
     $Producto = ProductoQuery::create()->findPk($request->getParameter('idproducto'));
     $this->forward404Unless($Producto, sprintf('Object Producto does not exist (%s).', $request->getParameter('idproducto')));
-    $Producto->delete();
-
+    try {
+        $Producto->delete();
+    }  catch (Exception $e){
+        $this->getUser()->setFlash('alerta', "no se pudo borrar el producto");
+        $this->redirect('modifProd/index');    
+    }
     $this->redirect('modifProd/index');
   }
 

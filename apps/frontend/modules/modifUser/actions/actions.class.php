@@ -55,7 +55,12 @@ class modifUserActions extends sfActions
 
     $Cliente = ClienteQuery::create()->findPk($request->getParameter('idcliente'));
     //$this->forward404Unless($Cliente, sprintf('Object Cliente does not exist (%s).', $request->getParameter('idcliente')));
-    $Cliente->delete();
+    try{
+        $Cliente->delete();
+    }  catch (Exception $e){
+            $this->getUser()->setFlash('alerta', "no se pudo borrar el cliente");
+            $this->redirect('administracion/index');    
+    }
 
     $this->redirect('administracion/index');
   }

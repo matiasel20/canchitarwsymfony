@@ -28,7 +28,9 @@
 
 <body>
 
-
+<?php if ($sf_user->hasFlash('alerta')): ?>
+<?php echo $alerta_msj = sprintf("<script>alert(\"%s\")</script>",$sf_user->getFlash('alerta'));?>
+<?php endif; ?>
 		
 		
 <div class="logo">
@@ -52,7 +54,7 @@
                         <?php if(!$sf_user->isAuthenticated()):?>
 			<a id="format" class="<?php if (!include_slot('entrar')): ?>link<?php endif; ?>" href="<?php echo url_for('login/index') ?>">Entrar</a>			
                         <?php endif;?>
-			<a id="format" class="<?php if (!include_slot('registrarse')): ?>link<?php endif; ?>" href="<?php echo url_for('registro/index') ?>">Registrarse</a>						
+			<a id="format" class="<?php if (!include_slot('registrarse')): ?>link<?php endif; ?>" href="<?php echo url_for('modifUser/new') ?>">Registrarse</a>						
 			<a id="format" class="<?php if (!include_slot('torneos')): ?>link<?php endif; ?>" href="<?php echo url_for('torneos/index') ?>">Torneos</a>					
 			<a id="format" class="<?php if (!include_slot('compras')): ?>link<?php endif; ?>" href="<?php echo url_for('compras/index') ?>">Compras</a>						
 			<a id="format" class="<?php if (!include_slot('alquileres')): ?>link<?php endif; ?>" href="<?php echo url_for('alquileres/index') ?>">Alquileres</a>						

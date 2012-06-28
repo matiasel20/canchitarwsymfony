@@ -1,9 +1,5 @@
 <?php slot('alquileres', 'Pisado') ?>
 
-<?php if ($sf_user->hasFlash('alerta')): ?>
-<?php echo $alerta_msj = sprintf("<script>alert(\"%s\")</script>",$sf_user->getFlash('alerta'));?>
-<?php endif; ?>
-
 <div id="tabs">
 		
   <ul>
@@ -16,6 +12,8 @@
   <div id="tabs-<?php echo $c; ?>">
       
     <img class="cancha" src="<?php echo image_path($archivo)?>" alt="pp"/>
+    
+    <br><a href="<?php echo url_for('alquileres/mostrar')?>">ver reservas realizadas</a><br>
 
     <label style="color:#8D0202"><?php echo $msj_sesion?></label><br>
     

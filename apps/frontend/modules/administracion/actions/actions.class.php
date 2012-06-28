@@ -66,7 +66,12 @@ class administracionActions extends sfActions
       //    ->findOne(); lo q es = a findPK()
       $prod = $pdt->findPk($request->getParameter('idp'));
       if($prod){
+        try{
           $prod->delete();
+        }  catch (Exception $e){
+            $this->getUser()->setFlash('alerta', "no se pudo borrar el producto");
+            $this->redirect('administracion/index');    
+        }
       }else{
           $this->forward404('No existe el producto a borrar');
       }
