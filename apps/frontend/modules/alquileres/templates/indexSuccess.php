@@ -12,9 +12,9 @@
   <div id="tabs-<?php echo $c; ?>">
       
     <img class="cancha" src="<?php echo image_path($archivo)?>" alt="pp"/>
-    
+    <?php if($sf_user->hasCredential('cliente')):?>
     <br><a href="<?php echo url_for('alquileres/mostrar')?>">ver reservas realizadas</a><br>
-
+    <?php endif?>
     <label style="color:#8D0202"><?php echo $msj_sesion?></label><br>
     
     <?php for($i=0;$i<$dia_limite;$i++): ?>
